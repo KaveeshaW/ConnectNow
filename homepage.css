@@ -1,0 +1,9 @@
+#connectNow {
+   font-size: 50px;
+   margin-top: 50px;
+   font-family: Arial, Helvetica, sans-serif;
+};
+#helpButton {
+    border-radius: 50%;
+    size: 30px;
+}
