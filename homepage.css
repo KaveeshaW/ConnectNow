@@ -2,8 +2,10 @@
    font-size: 50px;
    margin-top: 50px;
    font-family: Arial, Helvetica, sans-serif;
-};
+}
+
 #helpButton {
+    border: 1px solid black;
+    font-size: 30px;
     border-radius: 50%;
-    size: 30px;
 }
