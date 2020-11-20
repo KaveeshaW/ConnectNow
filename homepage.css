@@ -36,3 +36,8 @@ ul {
   li a:hover {
     background-color: #111;
   }
+
+  .btn-info {
+      background-color: rgb(31, 172, 73) !important;
+      border-color: rgb(14, 156, 14) !important;
+  }
