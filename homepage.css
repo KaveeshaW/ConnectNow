@@ -10,6 +10,11 @@
     border-radius: 50%;
 }
 
+#goToChemistry {
+  fill: rgb(31, 172, 73);
+  border-radius: 12px;
+}
+
 /* Got the styling for the navbar from https://www.w3schools.com/Css/css_navbar_horizontal.asp */
 
 ul {
