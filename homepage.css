@@ -9,3 +9,40 @@
     font-size: 30px;
     border-radius: 50%;
 }
+
+#goToChemistry {
+  fill: rgb(31, 172, 73);
+  border-radius: 12px;
+}
+
+/* Got the styling for the navbar from https://www.w3schools.com/Css/css_navbar_horizontal.asp */
+
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: rgb(31, 172, 73);
+  }
+  
+  li {
+    float: left;
+  }
+  
+  li a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+  }
+  
+  /* Change the link color to #111 (black) on hover */
+  li a:hover {
+    background-color: #111;
+  }
+
+  .btn-info {
+      background-color: rgb(31, 172, 73) !important;
+      border-color: rgb(14, 156, 14) !important;
+  }
