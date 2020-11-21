@@ -4,13 +4,21 @@
 }
 
 #connectNow {
-  font-size: 50px;
+  font-size: 60px;
   margin-top: 50px;
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: Calibri;
   text-align: center;
   margin-left: auto;
   margin-right: auto;
 }
+#courses {
+  font-size: 40px;
+  font-family: calibri;
+  position: relative;
+  margin-top: auto;
+  text-align: center;
+}
+
 .center {
   height: 200px;
   width: auto;
@@ -30,8 +38,9 @@
 .courseButtons {
   position: relative;
   text-align: center;
-  margin: auto;
+  margin-top: 100px;
   vertical-align: center;
+  font-family: 'Calibri';
 }
 
 #goToChemistry {
