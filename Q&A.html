@@ -1,11 +1,67 @@
+<!-- -->
 <!--Used this resource https://stackoverflow.com/questions/21998679/css-how-to-make-scrollable-list -->
 <!-- Used https://stackoverflow.com/questions/4825295/javascript-onclick-to-get-the-id-of-the-clicked-button -->
 <!-- Used this https://stackoverflow.com/questions/33178114/using-queryselectorall-to-change-the-style-property-of-multiple-elements -->
+<!-- Used https://www.w3schools.com/tags/tag_input.asp and https://stackoverflow.com/questions/7381446/center-html-input-text-field-placeholder for the input tag -->
+<!-- Used my code from https://github.com/KaveeshaW/it202-big-project/blob/master/index.html to get the question list working -->
+<!-- Used this https://stackoverflow.com/questions/30022728/perform-action-when-clicking-html5-datalist-option for datalist actions -->
+<!-- Used this for getting keys of dictionary https://stackoverflow.com/questions/10654992/how-can-i-get-a-collection-of-keys-in-a-javascript-dictionary  -->
 <!DOCTYPE html>
 <html>
 <head>
     <title>Chemistry: Home</title>
     <link rel="stylesheet" href="homepage.css">
+    <!-- <style>
+      #classQuestions {
+        padding-top: 130px;
+        align-content: center;
+        padding-left: 110px;
+        display:inline;
+        float:left;
+      } 
+      
+      #yourQuestions { 
+        padding-top: 5px;
+        align-items: center;
+        justify-content: center;
+        display:inline;
+        float: left;
+      }
+
+      #Q_and_A {
+        height:120px; 
+        width:35%;
+        overflow:hidden; 
+        overflow-y:scroll; 
+        display:inline;
+        float: left;
+      }
+
+      #question_time {
+        background-color: white;
+        align-items: center;
+      }
+
+      #a_question {
+        padding-bottom: 10px;
+        align-self: center;
+      }
+
+      #addQuestionButton {
+          border: 1px solid black;
+          font-size: 30px;
+          border-radius: 50%;
+          width: 45px;
+          height: 45px;
+          position: fixed;
+      }
+
+      ::-webkit-input-placeholder {
+        text-align: center;
+      }
+
+    </style> -->
+
 </head>
 <body>
     <h1 class = "chem-subPage"><b>Chemistry: Q&A</b></h1>
@@ -25,56 +81,91 @@
         <div class="row">
           <div id="classQuestions">
             <p>Your Questions:</p>
+            <input list = "questionList" type = "text" id = "search_question" name = "question" placeholder = "search" onclick = 'populateQuestionsInList()' oninput='putAnswerOnScreenIfClicked()'>
+              <datalist id="questionList"> 
+              </datalist>
+            <input type="button" onclick = goBackToPreviousScreen(this) id="addQuestionButton" value="+">
             <nav id = "Q_and_A">
               <ul id="question_time">
-                  <li id="a_question"><button id = "button_0" class = "question_button" onClick = "show_answer(this.id)">What is water?</button></li>
-                  <li id="a_question"><button id = "button_1" class = "question_button" onClick = "show_answer(this.id)">What are the first 5 elements of the periodic table?</button></li>
-                  <li id="a_question"><button id = "button_2" class = "question_button" onClick = "show_answer(this.id)">What does specific heat mean?</button></li>
+                  <li id="a_question"><button id = "button_0" class = "question_button" value = "What is water?" onClick = "show_answer(this.id)">What is water?</button></li>
+                  <li id="a_question"><button id = "button_1" class = "question_button" value = "What are the first 5 elements of the periodic table?" onClick = "show_answer(this.id)">What are the first 5 elements of the periodic table?</button></li>
+                  <li id="a_question"><button id = "button_2" class = "question_button" value = "What does specific heat mean?" onClick = "show_answer(this.id)">What does specific heat mean?</button></li>
               </ul>
-          </nav>
-          <div>
-            <input type="button" onclick = add_question_function(this) id="addQuestionButton" value="+">
-          </div>    
+          </nav>  
           </div>
       
           <div id="yourQuestions">
             <p>Your Question:</p>
             <p id="answer">Ask any question related to your class! Please be polite and respectful.</p>
-          </div>>
+          </div>
         </div> <!-- class="row" -->
       </div> <!-- class="container" -->
 
       <script type = "text/javascript">
         let newAnswerId = 3; // used whenever a new question is asked, the question will be added to the array, then update this 
-        let previousButton = "";
+        let newQuestion = true; 
+
+        let questions = [
+          "What is water?",
+          "What are the first 5 elements of the periodic table?",
+          "What does specific heat mean?"
+        ]
+
         let answers = [
-          "Water is an inorganic, transparent, tasteless, odorless, and nearly colorless chemical substance, which is the main constituent of Earth’s hydrosphere and the fluids of all known living organisms." 
-          + "It is vital for all known forms of life, even though it provides no calories or organic nutrients.",
+          "A substance composed of the chemical elements hydrogen and oxygen and existing in gaseous, liquid, and solid states.",
           "Hydrogen, Helium, Lithium, Berylium, Boron",
           "The heat required to raise the temperature of the unit mass of a given substance by a given amount (usually one degree)."
         ]
-        
+
         function show_answer(id_of_button) {
           resetButton();
           let button_and_number = id_of_button.split("_"); // I can get the button and also get the answer
+          let whichQuestion = button_and_number[1]; 
           let answer = document.querySelector("#answer");
-          answer.innerHTML = answers[button_and_number[1]]; // 1 corresponds with the button
+          answer.innerHTML = answers[whichQuestion];
           let button = document.querySelector("#" + id_of_button);
-          console.log(button.style);
           button.style.backgroundColor = "rgb(195, 195, 195)";
-          previousButton = id_of_button;
         }
 
         function resetButton() {
-          if(previousButton != "") {
-            console.log(previousButton);
-            let button = document.querySelector("#" + previousButton);
-            button.style.backgroundColor = "rgb(239, 239, 239)";
-          }
+          document.querySelectorAll("button.question_button").forEach(questionButton => {
+            questionButton.style.backgroundColor = "rgb(239, 239, 239)";
+          }); 
         }
 
-        function add_question_function() {
-          alert("let me ask you a question!!!!!!");
+        function goBackToPreviousScreen() {
+          alert("will be implemented eventually");
+        }
+
+        function populateQuestionsInList() {
+          // update questionlist if new question available
+          if(newQuestion) {
+            let questionList = document.querySelector("#questionList");
+            //for the option menu showing all of the different questions  
+            for(const index in questions) {
+              let specificQuestion = questions[index];
+              let option = document.createElement("option");
+              option.textContent = specificQuestion;
+              option.value = specificQuestion;
+              questionList.appendChild(option);
+            }
+          }
+           newQuestion = false;
+        };
+        
+        function putAnswerOnScreenIfClicked() {
+          let userInput = document.querySelector("#search_question").value;
+          let whichQuestion = document.querySelector('#questionList').childNodes;
+          //node indexing starts at one for some reason, the index in the array starts at 0
+          for (let questionInNodes = 1; questionInNodes < questions.length + 1; questionInNodes++) {
+            if (whichQuestion[questionInNodes].value == userInput) {
+              let indexInArray = questionInNodes - 1;
+              let button = "button_" + indexInArray;
+              show_answer(button);
+              document.querySelector("#search_question").value = "";
+              //alert(answers[indexInArray]);
+            }
+          }
         }
       </script>
 </body>
