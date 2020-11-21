@@ -1,31 +1,33 @@
 <!DOCTYPE html>
 <html>
-<head>
-    <title>Chemistry: Office Hours</title>
-    <link rel="stylesheet" href="coursesLayout.css">
-</head>
-<body>
-    <h1 class = "chem-subPage"><b>Chemistry: Office Hours</b></h1>
-    <!-- Got this from https://www.w3.org/wiki/Creating_multiple_pages_with_navigation_menus -->
-    <nav>
-        <ul>
-          <li><a href="courses.html">Courses</a></li>
-          <li><a href="calendar.html">Calendar</a></li>
-          <li><a href="reminders.html">Reminders</a></li>
-          <li><a href="messages.html">Messages</a></li>
-          <li><a href="assistance.html">Assistance</a></li>
-          <li><a href="settings.html">Settings</a></li>
-        </ul>
-    </nav>
-    
-    <br>
-
-    <br>
-
-    <form action="/action_page.php" style="text-align: right; padding-top: 37%;">
-        <label for="myfile">Select a file:</label>
-        <input type="file" id="myfile" name="myfile"><br><br>
-    </form>
-    
-</body>
+    <head>
+        <title>Office Hours</title>
+        <link rel="stylesheet" href="CSS/remindersLayout.css">
+        <!-- <link rel="stylesheet" href="CSS/navbarLayout.css"> -->
+    </head>
+    <body>
+        <div class="container">
+            <div class = "center">
+                <input type="button" onclick="window.location.href='help.html'" id="helpButton" value="?">
+                <p id="chemistryTitle">Chemistry</p>
+                <p id="reminders">Office Hours</p>
+            </div>
+            <div class="header">
+                <nav>
+                    <ul>
+                      <li><a href="courses.html">Courses</a></li>
+                      <li><a href="calendar.html">Calendar</a></li>
+                      <li><a href="reminders.html">Reminders</a></li>
+                      <li><a href="messages.html">Messages</a></li>
+                      <li><a href="assistance.html">Assistance</a></li>
+                      <li><a href="settings.html">Settings</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+        <form action="/action_page.php" style="text-align: right; padding-top: 34%;">
+            <label for="myfile">Select a file:</label>
+            <input type="file" id="myfile" name="myfile"><br><br>
+        </form>
+    </body>
 </html>
