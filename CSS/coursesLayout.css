@@ -1,0 +1,81 @@
+.container {
+  height: auto;
+  width: auto;
+}
+
+#connectNow {
+  font-size: 60px;
+  margin-top: 50px;
+  font-family: Calibri;
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+}
+#courses {
+  font-size: 40px;
+  font-family: calibri;
+  position: relative;
+  margin-top: auto;
+  text-align: center;
+}
+
+.center {
+  height: 200px;
+  width: auto;
+  margin-top: 20px;
+}
+#helpButton {
+  border: 1px solid black;
+  font-size: 25px;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  position: fixed;
+  text-align: center;
+  margin-left: 95%;
+
+}
+.courseButtons {
+  position: relative;
+  text-align: center;
+  margin-top: 100px;
+  vertical-align: center;
+  font-family: 'Calibri';
+}
+
+#goToChemistry {
+  background-color: rgb(142, 212, 163);
+  border-radius: 12px;
+  border: rgb(142, 212, 163);
+  width: 400px;
+  height: 400px;
+  font-size: 40px;
+}
+#goToHistory {
+  background-color: rgb(205, 178, 240);
+  border-radius: 12px;
+  border:  rgb(205, 178, 240);
+  width: 400px;
+  height: 400px;
+  font-size: 40px;
+  margin-left: 50px;
+  margin-right: 110px;
+}
+#goToEnglish {
+  background-color: rgb(240, 228, 178);
+  border-radius: 12px;
+  border:  rgb(240, 228, 178);
+  width: 400px;
+  height: 400px;
+  font-size: 40px;
+}
+#goToReminders {
+  background-color: red;
+  border: red;
+  border-radius: 50%;
+  height: 60px;
+  width: 60px;
+  position: relative;
+  top: -190px;
+  right: 35px;
+}
