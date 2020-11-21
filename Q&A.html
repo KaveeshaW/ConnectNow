@@ -10,7 +10,7 @@
 <html>
 <head>
     <title>Chemistry: Home</title>
-    <link rel="stylesheet" href="homepage.css">
+    <link rel="stylesheet" href="coursesLayout.css">
     <!-- <style>
       #classQuestions {
         padding-top: 130px;
@@ -61,9 +61,10 @@
       }
 
     </style> -->
-
+    
 </head>
 <body>
+  
     <h1 class = "chem-subPage"><b>Chemistry: Q&A</b></h1>
     <!-- Got this from https://www.w3.org/wiki/Creating_multiple_pages_with_navigation_menus -->
     <nav>
@@ -81,34 +82,39 @@
         <div class="row">
           <div id="classQuestions">
             <p>Your Questions:</p>
-            <input list = "questionList" type = "text" id = "search_question" name = "question" placeholder = "search" onclick = 'populateQuestionsInList()' oninput='putAnswerOnScreenIfClicked()'>
-              <datalist id="questionList"> 
-              </datalist>
-            <input type="button" onclick = goBackToPreviousScreen(this) id="addQuestionButton" value="+">
             <nav id = "Q_and_A">
+              <input list = "questionList" type = "text" id = "search_question" name = "question" placeholder = "Search..." onclick = 'populateQuestionsInList()' oninput='putAnswerOnScreenIfClicked()'>
+                <datalist id="questionList"> 
+                </datalist>
               <ul id="question_time">
-                  <li id="a_question"><button id = "button_0" class = "question_button" value = "What is water?" onClick = "show_answer(this.id)">What is water?</button></li>
-                  <li id="a_question"><button id = "button_1" class = "question_button" value = "What are the first 5 elements of the periodic table?" onClick = "show_answer(this.id)">What are the first 5 elements of the periodic table?</button></li>
-                  <li id="a_question"><button id = "button_2" class = "question_button" value = "What does specific heat mean?" onClick = "show_answer(this.id)">What does specific heat mean?</button></li>
+                  <li class="one_question"><button id = "button_0" class = "question_button" onClick = "show_answer(this.id)">What is water?</button></li>
+                  <li class="one_question"><button id = "button_1" class = "question_button" onClick = "show_answer(this.id)">What are the first 5 elements of the periodic table?</button></li>
+                  <li class="one_question"><button id = "button_2" class = "question_button" onClick = "show_answer(this.id)">What does specific heat mean?</button></li>
               </ul>
-          </nav>  
+            </nav>
+            <input type="button" onclick = goBackToFirstScreen(this) id="addQuestionButton" value="+"> 
           </div>
       
           <div id="yourQuestions">
-            <p>Your Question:</p>
+            <p id="yourQuestionOrAnswerParagraph">Your Question:</p>
             <p id="answer">Ask any question related to your class! Please be polite and respectful.</p>
+            <input type="text" id="input_question" name="ask_a_question" placeholder = "Type Question...">
+            <button id = "ask_your_question_button" onclick = "get_input()" disabled = true>Ask</button>
           </div>
         </div> <!-- class="row" -->
       </div> <!-- class="container" -->
+      
 
       <script type = "text/javascript">
+        
         let newAnswerId = 3; // used whenever a new question is asked, the question will be added to the array, then update this 
         let newQuestion = true; 
+        let questionLetterCount = 0;
 
         let questions = [
           "What is water?",
           "What are the first 5 elements of the periodic table?",
-          "What does specific heat mean?"
+          "What is specific heat?"
         ]
 
         let answers = [
@@ -118,22 +124,26 @@
         ]
 
         function show_answer(id_of_button) {
-          resetButton();
-          let button_and_number = id_of_button.split("_"); // I can get the button and also get the answer
+          resetButtons();
+          let button_and_number = id_of_button.split("_"); 
           let whichQuestion = button_and_number[1]; 
+
           let answer = document.querySelector("#answer");
           answer.innerHTML = answers[whichQuestion];
+          
+          document.querySelector("#yourQuestionOrAnswerParagraph").innerHTML = "Answer";
+
           let button = document.querySelector("#" + id_of_button);
           button.style.backgroundColor = "rgb(195, 195, 195)";
         }
 
-        function resetButton() {
+        function resetButtons() {
           document.querySelectorAll("button.question_button").forEach(questionButton => {
             questionButton.style.backgroundColor = "rgb(239, 239, 239)";
           }); 
         }
 
-        function goBackToPreviousScreen() {
+        function goBackToFirstScreen() {
           alert("will be implemented eventually");
         }
 
@@ -163,10 +173,37 @@
               let button = "button_" + indexInArray;
               show_answer(button);
               document.querySelector("#search_question").value = "";
-              //alert(answers[indexInArray]);
             }
           }
         }
+        
+        let question_input = document.querySelector("#input_question");
+        question_input.addEventListener('input', checkInputValue);
+        
+        function checkInputValue(e) {
+          let askQuestionButton = document.querySelector("#ask_your_question_button");
+          console.log(e);
+          if(e.data != null) {
+            questionLetterCount++;
+            askQuestionButton.disabled = false;
+          }
+          else if(e.inputType == "deleteContentBackward") {
+            questionLetterCount--;
+          }
+          if(questionLetterCount == 0) {
+            askQuestionButton.disabled = true;
+          }
+        }
+
+        function get_input() {
+          let askQuestionField = document.querySelector("#input_question");
+          let question = askQuestionField.value;
+          console.log(askQuestionField.value);
+          askQuestionField.value = "";
+          let newQuestion = document.createElement("li");
+          newQuestion.class = "one_question";
+        }
+      
       </script>
 </body>
 </html>
