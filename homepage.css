@@ -1,38 +1,68 @@
 .container {
-  height: 100%;
-  width: 100%;
+  height: auto;
+  width: auto;
 }
 
 #connectNow {
-   font-size: 50px;
-   margin-top: 50px;
-   font-family: Arial, Helvetica, sans-serif;
-   width: 50%;
-   text-align: center;
-   margin-left: auto;
-   margin-right: auto;
+  font-size: 50px;
+  margin-top: 50px;
+  font-family: Arial, Helvetica, sans-serif;
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
 }
-
+.center {
+  height: 200px;
+  width: auto;
+  margin-top: 20px;
+}
 #helpButton {
-    border: 1px solid black;
-    font-size: 30px;
-    border-radius: 50%;
-    width: 60px;
-    height: 60px;
-    position: fixed;
-    margin-left: 95%;
+  border: 1px solid black;
+  font-size: 25px;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  position: fixed;
+  text-align: center;
+  margin-left: 95%;
+
+}
+.courseButtons {
+  position: relative;
+  text-align: center;
+  margin: auto;
+  vertical-align: center;
 }
 
 #goToChemistry {
   background-color: rgb(142, 212, 163);
   border-radius: 12px;
   border: rgb(142, 212, 163);
-  width: 200px;
-  height: 200px;
-  font-size: 30px;
-  margin-top: 100px;
-  position: fixed;
+  width: 400px;
+  height: 400px;
+  font-size: 40px;
+  
 }
+
+#goToHistory {
+  background-color: rgb(205, 178, 240);
+  border-radius: 12px;
+  border:  rgb(205, 178, 240);
+  width: 400px;
+  height: 400px;
+  font-size: 40px;
+  margin: 50px;
+}
+#goToEnglish {
+  background-color: rgb(240, 228, 178);
+  border-radius: 12px;
+  border:  rgb(240, 228, 178);
+  width: 400px;
+  height: 400px;
+  font-size: 40px;
+
+}
+
 
 /* Got the styling for the navbar from https://www.w3schools.com/Css/css_navbar_horizontal.asp */
 
