@@ -41,9 +41,7 @@
   width: 400px;
   height: 400px;
   font-size: 40px;
-  
 }
-
 #goToHistory {
   background-color: rgb(205, 178, 240);
   border-radius: 12px;
@@ -51,7 +49,8 @@
   width: 400px;
   height: 400px;
   font-size: 40px;
-  margin: 50px;
+  margin-left: 50px;
+  margin-right: 110px;
 }
 #goToEnglish {
   background-color: rgb(240, 228, 178);
@@ -60,9 +59,17 @@
   width: 400px;
   height: 400px;
   font-size: 40px;
-
 }
-
+#goToReminders {
+  background-color: red;
+  border: red;
+  border-radius: 50%;
+  height: 60px;
+  width: 60px;
+  position: relative;
+  top: -190px;
+  right: 35px;
+}
 
 /* Got the styling for the navbar from https://www.w3schools.com/Css/css_navbar_horizontal.asp */
 
