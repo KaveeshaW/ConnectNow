@@ -25,7 +25,8 @@
   margin-top: 20px;
 }
 #helpButton {
-  border: 1px solid black;
+  border: 2px solid black;
+  background-color: white;
   font-size: 25px;
   border-radius: 50%;
   width: 40px;
@@ -33,7 +34,9 @@
   position: fixed;
   text-align: center;
   margin-left: 95%;
-
+}
+#helpButton:hover {
+  background-color: rgb(212, 211, 211);
 }
 .courseButtons {
   position: relative;
@@ -45,11 +48,15 @@
 
 #goToChemistry {
   background-color: rgb(142, 212, 163);
-  border-radius: 12px;
   border: rgb(142, 212, 163);
+  border-radius: 12px;
   width: 400px;
   height: 400px;
   font-size: 40px;
+}
+#goToChemistry:hover {
+  background-color: rgb(125, 194, 146);
+  border: rgb(125, 194, 146);
 }
 #goToHistory {
   background-color: rgb(205, 178, 240);
