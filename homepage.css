@@ -107,3 +107,58 @@ ul {
   .chem-subPage {
     text-align: center;
   }
+
+  #go_to_Q_and_A {
+    background-color: rgb(240, 240, 240);
+    border-radius: 12px;
+    border: rgb(142, 212, 163);
+    width: 200px;
+    height: 200px;
+    font-size: 30px;
+    margin-top: 100px;
+    position: center;
+  }
+
+  #classQuestions {
+    padding-top: 130px;
+    align-content: center;
+    padding-left: 110px;
+    display:inline;
+    float:left;
+  } 
+  
+  #yourQuestions { 
+    padding-top: 5px;
+    align-items: center;
+    justify-content: center;
+    display:inline;
+    float: left;
+  }
+
+  #Q_and_A {
+    height:120px; 
+    width:35%;
+    overflow:hidden; 
+    overflow-y:scroll; 
+    display:inline;
+    float: left;
+  }
+
+  #question_time {
+    background-color: white;
+    align-items: center;
+  }
+
+  #a_question {
+    padding-bottom: 10px;
+    align-self: center;
+  }
+
+  #addQuestionButton {
+      border: 1px solid black;
+      font-size: 30px;
+      border-radius: 50%;
+      width: 45px;
+      height: 45px;
+      position: fixed;
+  }
