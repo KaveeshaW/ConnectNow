@@ -27,39 +27,42 @@
   margin-left: 95%;
 
 }
-.courseButtons 
+.courseButtons {
+  position: relative;
+  text-align: center;
+  margin: auto;
+  vertical-align: center;
+}
 
 #goToChemistry {
   background-color: rgb(142, 212, 163);
   border-radius: 12px;
   border: rgb(142, 212, 163);
-  width: 200px;
-  height: 200px;
-  font-size: 30px;
-  margin-top: 100px;
-  position: relative;
+  width: 400px;
+  height: 400px;
+  font-size: 40px;
+  
 }
 
-#goToEnglish {
-  background-color: rgb(240, 228, 178);
-  border-radius: 12px;
-  border:  rgb(240, 228, 178);
-  width: 200px;
-  height: 200px;
-  font-size: 30px;
-  margin-top: 100px;
-  position: relative;
-}
 #goToHistory {
   background-color: rgb(205, 178, 240);
   border-radius: 12px;
   border:  rgb(205, 178, 240);
-  width: 200px;
-  height: 200px;
-  font-size: 30px;
-  margin-top: 100px;
-  position: relative;
+  width: 400px;
+  height: 400px;
+  font-size: 40px;
+  margin: 50px;
 }
+#goToEnglish {
+  background-color: rgb(240, 228, 178);
+  border-radius: 12px;
+  border:  rgb(240, 228, 178);
+  width: 400px;
+  height: 400px;
+  font-size: 40px;
+
+}
+
 
 /* Got the styling for the navbar from https://www.w3schools.com/Css/css_navbar_horizontal.asp */
 
