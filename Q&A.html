@@ -50,6 +50,8 @@
             <p id="answer">Ask any question related to your class! Please be polite and respectful.</p>
             <input type="text" id="input_question" name="ask_a_question" placeholder = "Type Question...">
             <button id = "ask_your_question_button" onclick = "get_input()" disabled = true>Ask</button>
+            <input type="text" id="input_answer" name="answer_a_question" placeholder = "Answer Question...">
+            <button id = "reply_to_question_button" onclick = "get_input()" disabled = true>Respond</button>
           </div>
         </div> <!-- class="row" -->
       </div> <!-- class="container" -->
@@ -72,14 +74,20 @@
           "Hydrogen, Helium, Lithium, Berylium, Boron",
           "The heat required to raise the temperature of the unit mass of a given substance by a given amount (usually one degree)."
         ]
-
+        
+        questionAndAnswer = {
+          0: {"What is water?":  "A substance composed of the chemical elements hydrogen and oxygen and existing in gaseous, liquid, and solid states."},
+          1: {"What are the first 5 elements of the periodic table?": "Hydrogen, Helium, Lithium, Berylium, Boron"},
+          2: {"What does specific heat mean?": "The heat required to raise the temperature of the unit mass of a given substance by a given amount (usually one degree)."}
+        }
+        
         function show_answer(id_of_button) {
           resetButtons();
           let button_and_number = id_of_button.split("_"); 
           let whichQuestion = button_and_number[1]; 
 
           let answer = document.querySelector("#answer");
-          answer.innerHTML = answers[whichQuestion];
+          answer.innerHTML = questionAndAnswer[whichQuestion][document.querySelector("#" + id_of_button).innerHTML];
           
           document.querySelector("#yourQuestionOrAnswerParagraph").innerHTML = "Answer";
 
@@ -101,13 +109,15 @@
           // update questionlist if new question available
           if(newQuestion) {
             let questionList = document.querySelector("#questionList");
+            let whichQuestion = 0;
             //for the option menu showing all of the different questions  
-            for(const index in questions) {
-              let specificQuestion = questions[index];
+            for(const question of questions) {
+              let specificQuestion = question;
               let option = document.createElement("option");
               option.textContent = specificQuestion;
               option.value = specificQuestion;
               questionList.appendChild(option);
+              whichQuestion++;
             }
           }
            newQuestion = false;
@@ -117,11 +127,11 @@
           let userInput = document.querySelector("#search_question").value;
           let whichQuestion = document.querySelector('#questionList').childNodes;
           //node indexing starts at one for some reason, the index in the array starts at 0
-          for (let questionInNodes = 1; questionInNodes < questions.length + 1; questionInNodes++) {
+          for (let questionInNodes = 1; questionInNodes < Object.keys(questionAndAnswer).length + 1; questionInNodes++) {
             if (whichQuestion[questionInNodes].value == userInput) {
               let indexInArray = questionInNodes - 1;
-              let button = "button_" + indexInArray;
-              show_answer(button);
+              let button_id = "button_" + indexInArray;
+              show_answer(button_id);
               document.querySelector("#search_question").value = "";
             }
           }
@@ -130,29 +140,48 @@
         let question_input = document.querySelector("#input_question");
         question_input.addEventListener('input', checkInputValue);
         
-        function checkInputValue(e) {
-          let askQuestionButton = document.querySelector("#ask_your_question_button");
-          console.log(e);
-          if(e.data != null) {
-            questionLetterCount++;
-            askQuestionButton.disabled = false;
-          }
-          else if(e.inputType == "deleteContentBackward") {
-            questionLetterCount--;
-          }
-          if(questionLetterCount == 0) {
-            askQuestionButton.disabled = true;
-          }
-        }
+        // 7
+        //   let askQuestionButton = document.querySelector("#ask_your_question_button");
+        //   console.log(e);
+        //   if(e.data != null) {
+        //     questionLetterCount++;
+        //     askQuestionButton.disabled = false;
+        //   }
+        //   else if(e.inputType == "deleteContentBackward") {
+        //     questionLetterCount--;
+        //   }
+        //   if(questionLetterCount == 0) {
+        //     askQuestionButton.disabled = true;
+        //   }
+        // }
 
-        function get_input() {
-          let askQuestionField = document.querySelector("#input_question");
-          let question = askQuestionField.value;
-          console.log(askQuestionField.value);
-          askQuestionField.value = "";
-          let newQuestion = document.createElement("li");
-          newQuestion.class = "one_question";
-        }
+        // function get_input() {
+        //   let askQuestionField = document.querySelector("#input_question");
+        //   let question = askQuestionField.value;
+        //   askQuestionField.value = "";
+
+        //   let newQuestion = document.createElement("li");
+        //   newQuestion.class = "one_question";
+
+        //   let button = document.createElement("button");
+        //   button.id = "button_" + newAnswerId;
+        //   button.className = "question_button";
+        //   button.innerHTML = question;
+        //   button.style.backgroundColor = "rgb(239, 239, 239)";
+        //   let obj = {};
+        //   obj[question] = "not answered yet";
+        //   questionAndAnswer[newAnswerId] = obj;
+        //  // questionAndAnswer[newAnswerId] = {question : "not answered yet"};
+        //   console.log(questionAndAnswer);
+        //   newAnswerId++;
+
+        //   newQuestion.appendChild(button);
+        //   document.querySelector("#question_time").appendChild(newQuestion);
+        //   let id = button.id;
+        //   document.querySelector("#" + button.id).setAttribute('onclick', 'show_answer(id)');
+
+        //   newQuestion = true;
+        // }
       
       </script>
 </body>
