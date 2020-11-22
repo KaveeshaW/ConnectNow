@@ -3,10 +3,13 @@
     <head>
         <title>Office Hours</title>
         <link rel="stylesheet" href="CSS/remindersLayout.css">
+        <link rel="stylesheet" href="CSS/navbarLayout.css">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.css">
+
         <!-- <link rel="stylesheet" href="CSS/navbarLayout.css"> -->
     </head>
     <body>
-        <div class="container">
+        <div class="cContainer">
             <div class = "center">
                 <input type="button" onclick="window.location.href='help.html'" id="helpButton" value="?">
                 <p id="chemistryTitle">Chemistry</p>
@@ -32,13 +35,21 @@
         <body>
 
         <style>
-            
+            .cContainer {
+                height: auto;
+                width: auto;
+                background-color: rgb(142, 212, 163);
+
+             }
+                        
             .container {
                 border: 2px solid #dedede;
                 background-color: #f1f1f1;
                 border-radius: 5px;
                 padding: 10px;
                 margin: 10px 0;
+                height: auto;
+                width: auto;
             }
 
             .darker {

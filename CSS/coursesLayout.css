@@ -37,6 +37,7 @@
 }
 #helpButton:hover {
   background-color: rgb(212, 211, 211);
+  cursor: pointer;
 }
 .courseButtons {
   position: relative;
