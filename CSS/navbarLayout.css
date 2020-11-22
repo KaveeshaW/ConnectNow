@@ -25,6 +25,10 @@ ul {
   li a:hover {
     background-color: rgb(48, 247, 8);
   }
+  /*adding to keep highlight*/
+  li a.active {
+    background-color: rgb(255, 255, 255);
+  }
 
   .btn-info {
       background-color: rgb(31, 172, 73) !important;
