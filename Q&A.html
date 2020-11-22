@@ -11,30 +11,31 @@
 <head>
     <title>Chemistry: Home</title>
     <link rel="stylesheet" href="CSS/questionAnswerLayout.css">
-    <link rel="stylesheet" href="CSS/remindersLayout.css"> 
+    <link rel="stylesheet" href="CSS/remindersLayout.css">
+    <link rel="stylesheet" href="CSS/navbar.css">
 
 </head>
 <body>
   
-  <div class="container">
-      <div class = "center">
-          <input type="button" onclick="window.location.href='help.html'" id="helpButton" value="?">
-          <p id="chemistryTitle">Chemistry</p>
-          <p id="reminders">Q&A</p>
-      </div>
-      <div class="header">
-          <nav>
-              <ul>
-                <li><a href="courses.html">Courses</a></li>
-                <li><a href="calendar.html">Calendar</a></li>
-                <li><a href="reminders.html">Reminders</a></li>
-                <li><a href="messages.html">Messages</a></li>
-                <li><a href="assistance.html">Assistance</a></li>
-                <li><a href="settings.html">Settings</a></li>
-              </ul>
-          </nav>
-      </div>
-  </div>
+  <div class="rContainer">
+    <div class = "rCenter">
+        <input type="button" onclick="window.location.href='help.html'" id="helpButton" value="?">
+        <p id="chemistryTitle">Chemistry</p>
+        <p id="reminders">Q&A</p>
+    </div>
+    <div class="header">
+        <nav>
+            <ul>
+              <li><a href="courses.html">Courses</a></li>
+              <li><a href="calendar.html">Calendar</a></li>
+              <li><a href="reminders.html">Reminders</a></li>
+              <li><a href="messages.html">Messages</a></li>
+              <li><a href="assistance.html">Assistance</a></li>
+              <li><a href="settings.html">Settings</a></li>
+            </ul>
+        </nav>
+    </div>
+</div>
       <div id="classQuestions">
         <input list = "questionList" type = "text" id = "search_question" name = "question" placeholder = "Search..." onclick = 'populateQuestionsInList()' oninput='putAnswerOnScreenIfClicked()'>
             <datalist id="questionList"> 
