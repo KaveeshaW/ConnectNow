@@ -10,10 +10,11 @@
     position: center;
 }
 
-#classQuestions {
+#classQuestionsContainer {
     font-size: 20px;
     font-family: calibri;
     align-content: center;
+    width: 100%;
 } 
 
 #yourQuestions { 
@@ -23,11 +24,12 @@
 }
 
 #Q_and_A {
-    height:140px; 
-    width:20%;
+    height:190px; 
+    width:50%;
     overflow:hidden; 
     overflow-y:scroll; 
     align-items: center;
+    padding: 20px;
 }
 
 #question_time {
@@ -43,7 +45,7 @@
     align-self: center;
 }
 
-#addQuestionButton {
+#goBackToNoQuestions {
     border: 1px solid black;
     font-size: 30px;
     border-radius: 50%;
@@ -83,4 +85,12 @@
     height: 23px;
     font-size: 16px;
     display: none;
+}
+
+#searchBarDiv {
+    padding: 20px;
+}
+
+#searchAndGoBack {
+    position: relative;
 }

@@ -12,7 +12,6 @@
     <title>Chemistry: Home</title>
     <link rel="stylesheet" href="CSS/questionAnswerLayout.css">
     <link rel="stylesheet" href="CSS/remindersLayout.css">
-    <link rel="stylesheet" href="CSS/navbar.css">
 
 </head>
 <body>
@@ -35,23 +34,31 @@
             </ul>
         </nav>
     </div>
-</div>
-      <div id="classQuestions">
-        <input list = "questionList" type = "text" id = "search_question" name = "question" placeholder = "Search..." onclick = 'populateQuestionsInList()' oninput='putAnswerOnScreenIfClicked()'>
-            <datalist id="questionList"> 
-            </datalist>
+  </div>  
+    <div id="classQuestionsContainer">
+      <div style = "width: 50%; height: 100px; float: left;">
         <nav id = "Q_and_A">
-          <div>
-            <p>Your Questions:</p>
+          <p>Your Questions:</p>
+          <div id = "searchAndGoBack">
+            <div id = "searchBarDiv">
+              <input list = "questionList" type = "text" id = "search_question" name = "question" placeholder = "Search..." onclick = 'populateQuestionsInList()' oninput='putAnswerOnScreenIfClicked()'>
+              <input type="button" onclick = goBackToFirstScreen(this) id="goBackToNoQuestionsButton" value="+" disabled = true> 
+            </div>
+            <div>
+              <datalist id="questionList"> 
+              </datalist>
+            </div>  
           </div>
-          
           <ul id="question_time">
               <li class="one_question"><button id = "button_0" class = "question_button" onClick = "show_answer(this.id)">What is water?</button></li>
               <li class="one_question"><button id = "button_1" class = "question_button" onClick = "show_answer(this.id)">What are the first 5 elements of the periodic table?</button></li>
               <li class="one_question"><button id = "button_2" class = "question_button" onClick = "show_answer(this.id)">What does specific heat mean?</button></li>
           </ul>
         </nav>
-        <input type="button" onclick = goBackToFirstScreen(this) id="addQuestionButton" value="+" disabled = true> 
+      </div>
+      
+
+      <div id="enterQuestionOrShowAnswer" style = "margin-left: 50%; height: 100px;">
         <p id="yourQuestionOrAnswerParagraph">Your Question:</p>
         <p id="answer">Ask any question related to your class! Please be polite and respectful.</p>
         <input type="text" id="input_question" name="ask_a_question" placeholder = "Type Question...">
@@ -59,16 +66,7 @@
         <input type="text" id="input_answer" name="answer_a_question" placeholder = "Answer Question...">
         <button id = "reply_to_question_button" onclick = "create_answer()" disabled = true>Respond</button>
       </div>
-  
-      <div id="yourQuestions">
-        <!-- <p id="yourQuestionOrAnswerParagraph">Your Question:</p>
-        <p id="answer">Ask any question related to your class! Please be polite and respectful.</p>
-        <input type="text" id="input_question" name="ask_a_question" placeholder = "Type Question...">
-        <button id = "ask_your_question_button" onclick = "get_input()" disabled = true>Ask</button> -->
-        <!-- <input type="text" id="input_answer" name="answer_a_question" placeholder = "Answer Question...">
-        <button id = "reply_to_question_button" onclick = "get_input()" disabled = true>Respond</button> -->
-      </div>
-      
+    </div>
 
       <script type = "text/javascript">
         
@@ -98,7 +96,7 @@
         
         function show_answer(id_of_button) {
           resetButtons();
-          document.querySelector("#addQuestionButton").disabled = false;
+          document.querySelector("#goBackToNoQuestionsButton").disabled = false;
 
           let button_and_number = id_of_button.split("_"); 
           let whichQuestion = button_and_number[1]; 
@@ -129,7 +127,7 @@
 
         function goBackToFirstScreen() {
           resetButtons();
-          document.querySelector("#addQuestionButton").disabled = true;
+          document.querySelector("#goBackToNoQuestionsButton").disabled = true;
           document.querySelector("#yourQuestionOrAnswerParagraph").innerHTML = "Your Question:";
           document.querySelector("#answer").innerHTML = "Ask any question related to your class! Please be polite and respectful."; 
 
