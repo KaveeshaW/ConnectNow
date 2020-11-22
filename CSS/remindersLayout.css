@@ -1,8 +1,8 @@
-.container {
-  height: auto;
-  width: auto;
-}
-
+.rContainer {
+    height: auto;
+    width: auto;
+  }
+  
 #chemistryTitle {
   font-size: 60px;
   font-family: Calibri;
@@ -18,7 +18,7 @@
   text-align: center;
   margin-top: -50px;
 }
-.center {
+.rCenter {
   height: 200px;
   width: 100%;
   margin-top: -60px;
@@ -36,11 +36,12 @@
   text-align: center;
   margin-left: 95%;
   margin-top: 50px;
-} 
-
+}
 #helpButton:hover {
   background-color: rgb(212, 211, 211);
+  cursor: pointer;
 }
+
 ul {
   list-style-type: none;
   margin: 0;
@@ -71,4 +72,27 @@ li a:hover {
 .btn-info {
     background-color: rgb(125, 194, 146) !important;
     border-color: rgb(125, 194, 146) !important;
+}
+
+.listContainer{
+  max-height: 400px;
+  overflow-y: scroll;
+}
+
+.reminderInput{
+  margin-left: 25%;
+  max-width: 500px;
+}
+
+.liClose{
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  right: 0%;
+  padding: 12px 20px;
+  transform: translate(0%, -50%);
+}
+
+.liClose:hover{
+  background: #bbb;
 }
