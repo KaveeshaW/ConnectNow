@@ -54,7 +54,9 @@
         <p id="yourQuestionOrAnswerParagraph">Your Question:</p>
         <p id="answer">Ask any question related to your class! Please be polite and respectful.</p>
         <input type="text" id="input_question" name="ask_a_question" placeholder = "Type Question...">
-        <button id = "ask_your_question_button" onclick = "get_input()" disabled = true>Ask</button>
+        <button id = "ask_your_question_button" onclick = "create_question()" disabled = true>Ask</button>
+        <input type="text" id="input_answer" name="answer_a_question" placeholder = "Answer Question...">
+        <button id = "reply_to_question_button" onclick = "create_answer()" disabled = true>Respond</button>
       </div>
   
       <div id="yourQuestions">
@@ -72,6 +74,8 @@
         let newAnswerId = 3; // used whenever a new question is asked, the question will be added to the array, then update this 
         let newQuestion = true; 
         let questionLetterCount = 0;
+        let currentQuestionString = "";
+        let currentQuestionNumber = 0;
 
         let questions = [
           "What is water?",
@@ -105,6 +109,15 @@
 
           let button = document.querySelector("#" + id_of_button);
           button.style.backgroundColor = "rgb(195, 195, 195)";
+
+          document.querySelector("#input_question").style.display = 'none';
+          document.querySelector("#ask_your_question_button").style.display = 'none';
+
+          document.querySelector("#input_answer").style.display = 'block';
+          document.querySelector("#reply_to_question_button").style.display = 'block';
+          
+          currentQuestionString = document.querySelector("#" + id_of_button).innerHTML;
+          currentQuestionNumber = whichQuestion;
         }
 
         function resetButtons() {
@@ -118,6 +131,12 @@
           document.querySelector("#addQuestionButton").disabled = true;
           document.querySelector("#yourQuestionOrAnswerParagraph").innerHTML = "Your Question:";
           document.querySelector("#answer").innerHTML = "Ask any question related to your class! Please be polite and respectful."; 
+
+          document.querySelector("#input_question").style.display = 'block';
+          document.querySelector("#ask_your_question_button").style.display = 'block';
+
+          document.querySelector("#input_answer").style.display = 'none';
+          document.querySelector("#reply_to_question_button").style.display = 'none';
         }
 
         function populateQuestionsInList() {
@@ -125,15 +144,24 @@
           if(newQuestion) {
             let questionList = document.querySelector("#questionList");
             let whichQuestion = 0;
-            //for the option menu showing all of the different questions  
-            for(const question of questions) {
-              let specificQuestion = question;
+            //for the option menu showing all of the different questions 
+            while(whichQuestion < Object.keys(questionAndAnswer).length) {
+              let specificQuestion = Object.keys(questionAndAnswer[whichQuestion])[0];
               let option = document.createElement("option");
               option.textContent = specificQuestion;
               option.value = specificQuestion;
               questionList.appendChild(option);
               whichQuestion++;
-            }
+            } 
+            // for(const index in questionAndAnswer[index]) {
+            //   console.log(index);
+              // let specificQuestion = question;
+              // let option = document.createElement("option");
+              // option.textContent = specificQuestion;
+              // option.value = specificQuestion;
+              // questionList.appendChild(option);
+              // whichQuestion++;
+           // }
           }
            newQuestion = false;
         };
@@ -153,11 +181,10 @@
         }
         
         let question_input = document.querySelector("#input_question");
-        question_input.addEventListener('input', checkInputValue);
+        question_input.addEventListener('input', checkQuestionInput);
         
-        function checkInputValue(e) {
+        function checkQuestionInput(e) {
           let askQuestionButton = document.querySelector("#ask_your_question_button");
-          console.log(e);
           if(e.data != null) {
             questionLetterCount++;
             askQuestionButton.disabled = false;
@@ -170,7 +197,7 @@
           }
         }
 
-        function get_input() {
+        function create_question() {
           let askQuestionField = document.querySelector("#input_question");
           let question = askQuestionField.value;
           askQuestionField.value = "";
@@ -186,18 +213,49 @@
           let obj = {};
           obj[question] = "not answered yet";
           questionAndAnswer[newAnswerId] = obj;
-         // questionAndAnswer[newAnswerId] = {question : "not answered yet"};
-          console.log(questionAndAnswer);
           newAnswerId++;
 
           newQuestion.appendChild(button);
           document.querySelector("#question_time").appendChild(newQuestion);
           let id = button.id;
           document.querySelector("#" + button.id).setAttribute('onclick', 'show_answer(id)');
+          show_answer(button.id);
 
           newQuestion = true;
+          populateQuestionsInList();
         }
-      
+        
+        let answer_input = document.querySelector("#input_answer");
+        answer_input.addEventListener('input', checkReplyInput);
+
+        function checkReplyInput(e) {
+          let replyButton = document.querySelector("#reply_to_question_button");
+          if(e.data != null) {
+            questionLetterCount++;
+            replyButton.disabled = false;
+          }
+          else if(e.inputType == "deleteContentBackward") {
+            questionLetterCount--;
+          }
+          if(questionLetterCount == 0) {
+            replyButton.disabled = true;
+          }
+        }
+        
+        function create_answer() {
+          let answerField = document.querySelector("#input_answer");
+          let answer = answerField.value;
+          answerField.value = "";
+
+          if(document.querySelector("#answer").innerHTML == "not answered yet") {
+            document.querySelector("#answer").innerHTML = answer;
+            questionAndAnswer[currentQuestionNumber][currentQuestionString] = answer;
+          }
+          else {
+            document.querySelector("#answer").innerHTML = document.querySelector("#answer").innerHTML + "\n" + answer; 
+            questionAndAnswer[currentQuestionNumber][currentQuestionString] = document.querySelector("#answer").innerHTML + "\n" + answer;
+          }
+        }
       </script>
 </body>
 </html>
