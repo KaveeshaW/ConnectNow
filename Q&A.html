@@ -54,7 +54,7 @@
         <p id="yourQuestionOrAnswerParagraph">Your Question:</p>
         <p id="answer">Ask any question related to your class! Please be polite and respectful.</p>
         <input type="text" id="input_question" name="ask_a_question" placeholder = "Type Question...">
-        <button id = "ask_your_question_button" onclick = "get_input()" disabled = true>Ask</button>
+        <button id = "ask_your_question_button" onclick = "create_question()" disabled = true>Ask</button>
       </div>
   
       <div id="yourQuestions">
@@ -125,15 +125,25 @@
           if(newQuestion) {
             let questionList = document.querySelector("#questionList");
             let whichQuestion = 0;
-            //for the option menu showing all of the different questions  
-            for(const question of questions) {
-              let specificQuestion = question;
+            //for the option menu showing all of the different questions 
+            while(whichQuestion < Object.keys(questionAndAnswer).length) {
+              let specificQuestion = Object.keys(questionAndAnswer[whichQuestion])[0];
+              console.log(specificQuestion);
               let option = document.createElement("option");
               option.textContent = specificQuestion;
               option.value = specificQuestion;
               questionList.appendChild(option);
               whichQuestion++;
-            }
+            } 
+            // for(const index in questionAndAnswer[index]) {
+            //   console.log(index);
+              // let specificQuestion = question;
+              // let option = document.createElement("option");
+              // option.textContent = specificQuestion;
+              // option.value = specificQuestion;
+              // questionList.appendChild(option);
+              // whichQuestion++;
+           // }
           }
            newQuestion = false;
         };
@@ -170,7 +180,7 @@
           }
         }
 
-        function get_input() {
+        function create_question() {
           let askQuestionField = document.querySelector("#input_question");
           let question = askQuestionField.value;
           askQuestionField.value = "";
@@ -186,16 +196,16 @@
           let obj = {};
           obj[question] = "not answered yet";
           questionAndAnswer[newAnswerId] = obj;
-         // questionAndAnswer[newAnswerId] = {question : "not answered yet"};
-          console.log(questionAndAnswer);
           newAnswerId++;
 
           newQuestion.appendChild(button);
           document.querySelector("#question_time").appendChild(newQuestion);
           let id = button.id;
           document.querySelector("#" + button.id).setAttribute('onclick', 'show_answer(id)');
+          show_answer(button.id);
 
           newQuestion = true;
+          populateQuestionsInList();
         }
       
       </script>
