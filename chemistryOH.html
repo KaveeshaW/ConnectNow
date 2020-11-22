@@ -26,15 +26,91 @@
             </div>
         </div>
 
-        <h2 style="text-align: center;">Chat Messages</h2>
+        <h2 style="text-align: center; padding-bottom: 1%;">Chat Messages</h2>
+
+            
+        <body>
+
+        <style>
+            
+            .container {
+                border: 2px solid #dedede;
+                background-color: #f1f1f1;
+                border-radius: 5px;
+                padding: 10px;
+                margin: 10px 0;
+            }
+
+            .darker {
+                border-color: #ccc;
+                background-color: #dddf;
+            }
+
+            .container::after {
+                content: "";
+                clear: both;
+                display: table;
+            }
+
+            .container img {
+                float: left;
+                max-width: 60px;
+                width: 100%;
+                margin-right: 20px;
+                border-radius: 50%;
+            }
+
+            .container img.right {
+                float: right;
+                margin-left: 20px;
+                margin-right:0;
+            }
+
+            .time-right {
+                float: right;
+                color: #aaa;
+            }
+
+            .time-left {
+                float: left;
+                color: #999;
+            }
+
+        </style>
+        
+        <div class="container">
+            <img src="images\owl.jpg" alt="Avatar" style="width:100%;">
+            <p style="text-align: left;">Hello. How are you today?</p>
+            <span class="time-right">11:00</span>
+        </div>
+        
+        <div class="container darker">
+            <img src="images\student.jpg" alt="Avatar" style="width:100%; float: right; padding-left: .25%;">
+            <p style="text-align: right;">Hey! I'm fine. Thanks for asking!</p>
+            <span class="time-left">11:01</span>
+        </div>
+        
+        <div class="container">
+            <img src="images\owl.jpg" alt="Avatar" style="width:100%;">
+            <p style="text-align: left;">How can I help you?</p>
+            <span class="time-right">11:02</span>
+        </div>
+        
+        <div class="container darker">
+            <img src="images\student.jpg" alt="Avatar" style="width:100%; float: right; padding-left: .25%;">
+            <p style="text-align: right;">Nah, I dunno. Play soccer.. or learn more coding perhaps?</p>
+            <span class="time-left">11:05</span>
+        </div>
+        
+        </body>
       
-        <p style="text-align: right; padding-top: 25%;">
+        <p style="text-align: right; padding-top: 3%;">
             <hr>
         </p>
         
         <form action="/action_page.php" style="text-align: right; padding-top: 0.5%;">
             <b style="text-align: center; padding-right: 15%;">
-                <input type="text" id="textQ" size="100" placeholder="Ask a question" style="text-align: center;">
+                <input type="text" id="textQ" size="100" placeholder="Type something here..." style="text-align: center;">
             </b>
             <label for="myfile">Select a file:</label>
             <input type="file" id="myfile" name="myfile"><br><br>
