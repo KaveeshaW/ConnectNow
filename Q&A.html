@@ -36,20 +36,19 @@
       </div>
   </div>
     <div class="question_container">
-        <div class="row">
           <div id="classQuestions">
             <p>Your Questions:</p>
-            <nav id = "Q_and_A">
-              <input list = "questionList" type = "text" id = "search_question" name = "question" placeholder = "Search..." onclick = 'populateQuestionsInList()' oninput='putAnswerOnScreenIfClicked()'>
+            <!-- <input list = "questionList" type = "text" id = "search_question" name = "question" placeholder = "Search..." onclick = 'populateQuestionsInList()' oninput='putAnswerOnScreenIfClicked()'>
                 <datalist id="questionList"> 
-                </datalist>
+                </datalist> -->
+            <nav id = "Q_and_A">
               <ul id="question_time">
                   <li class="one_question"><button id = "button_0" class = "question_button" onClick = "show_answer(this.id)">What is water?</button></li>
                   <li class="one_question"><button id = "button_1" class = "question_button" onClick = "show_answer(this.id)">What are the first 5 elements of the periodic table?</button></li>
                   <li class="one_question"><button id = "button_2" class = "question_button" onClick = "show_answer(this.id)">What does specific heat mean?</button></li>
               </ul>
             </nav>
-            <input type="button" onclick = goBackToFirstScreen(this) id="addQuestionButton" value="+"> 
+            <!-- <input type="button" onclick = goBackToFirstScreen(this) id="addQuestionButton" value="+">  -->
           </div>
       
           <div id="yourQuestions">
@@ -57,8 +56,8 @@
             <p id="answer">Ask any question related to your class! Please be polite and respectful.</p>
             <input type="text" id="input_question" name="ask_a_question" placeholder = "Type Question...">
             <button id = "ask_your_question_button" onclick = "get_input()" disabled = true>Ask</button>
-            <input type="text" id="input_answer" name="answer_a_question" placeholder = "Answer Question...">
-            <button id = "reply_to_question_button" onclick = "get_input()" disabled = true>Respond</button>
+            <!-- <input type="text" id="input_answer" name="answer_a_question" placeholder = "Answer Question...">
+            <button id = "reply_to_question_button" onclick = "get_input()" disabled = true>Respond</button> -->
           </div>
         </div> <!-- class="row" -->
       </div> <!-- class="container" -->
@@ -77,9 +76,9 @@
         ]
 
         let answers = [
-          "A substance composed of the chemical elements hydrogen and oxygen and existing in gaseous, liquid, and solid states.",
+          "A substance composed of the chemical elements hydrogen and oxygen and existing in gaseous, liquid, and solid states",
           "Hydrogen, Helium, Lithium, Berylium, Boron",
-          "The heat required to raise the temperature of the unit mass of a given substance by a given amount (usually one degree)."
+          "The heat required to raise the temperature of the unit mass of a given substance by a given amount (usually one degree)"
         ]
         
         questionAndAnswer = {
@@ -147,48 +146,48 @@
         let question_input = document.querySelector("#input_question");
         question_input.addEventListener('input', checkInputValue);
         
-        // 7
-        //   let askQuestionButton = document.querySelector("#ask_your_question_button");
-        //   console.log(e);
-        //   if(e.data != null) {
-        //     questionLetterCount++;
-        //     askQuestionButton.disabled = false;
-        //   }
-        //   else if(e.inputType == "deleteContentBackward") {
-        //     questionLetterCount--;
-        //   }
-        //   if(questionLetterCount == 0) {
-        //     askQuestionButton.disabled = true;
-        //   }
-        // }
+        function checkInputValue(e) {
+          let askQuestionButton = document.querySelector("#ask_your_question_button");
+          console.log(e);
+          if(e.data != null) {
+            questionLetterCount++;
+            askQuestionButton.disabled = false;
+          }
+          else if(e.inputType == "deleteContentBackward") {
+            questionLetterCount--;
+          }
+          if(questionLetterCount == 0) {
+            askQuestionButton.disabled = true;
+          }
+        }
 
-        // function get_input() {
-        //   let askQuestionField = document.querySelector("#input_question");
-        //   let question = askQuestionField.value;
-        //   askQuestionField.value = "";
+        function get_input() {
+          let askQuestionField = document.querySelector("#input_question");
+          let question = askQuestionField.value;
+          askQuestionField.value = "";
 
-        //   let newQuestion = document.createElement("li");
-        //   newQuestion.class = "one_question";
+          let newQuestion = document.createElement("li");
+          newQuestion.class = "one_question";
 
-        //   let button = document.createElement("button");
-        //   button.id = "button_" + newAnswerId;
-        //   button.className = "question_button";
-        //   button.innerHTML = question;
-        //   button.style.backgroundColor = "rgb(239, 239, 239)";
-        //   let obj = {};
-        //   obj[question] = "not answered yet";
-        //   questionAndAnswer[newAnswerId] = obj;
-        //  // questionAndAnswer[newAnswerId] = {question : "not answered yet"};
-        //   console.log(questionAndAnswer);
-        //   newAnswerId++;
+          let button = document.createElement("button");
+          button.id = "button_" + newAnswerId;
+          button.className = "question_button";
+          button.innerHTML = question;
+          button.style.backgroundColor = "rgb(239, 239, 239)";
+          let obj = {};
+          obj[question] = "not answered yet";
+          questionAndAnswer[newAnswerId] = obj;
+         // questionAndAnswer[newAnswerId] = {question : "not answered yet"};
+          console.log(questionAndAnswer);
+          newAnswerId++;
 
-        //   newQuestion.appendChild(button);
-        //   document.querySelector("#question_time").appendChild(newQuestion);
-        //   let id = button.id;
-        //   document.querySelector("#" + button.id).setAttribute('onclick', 'show_answer(id)');
+          newQuestion.appendChild(button);
+          document.querySelector("#question_time").appendChild(newQuestion);
+          let id = button.id;
+          document.querySelector("#" + button.id).setAttribute('onclick', 'show_answer(id)');
 
-        //   newQuestion = true;
-        // }
+          newQuestion = true;
+        }
       
       </script>
 </body>
