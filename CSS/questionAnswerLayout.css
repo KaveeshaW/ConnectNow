@@ -24,16 +24,14 @@
 }
 
 #Q_and_A {
-    height:190px; 
-    width:50%;
     overflow:hidden; 
     overflow-y:scroll; 
-    align-items: center;
     padding: 20px;
 }
 
 #question_time {
     background-color: white;
+    position: relative;
 }
 
 #search_question {
