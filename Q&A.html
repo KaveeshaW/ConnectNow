@@ -35,32 +35,36 @@
           </nav>
       </div>
   </div>
-    <div class="question_container">
-          <div id="classQuestions">
+      <div id="classQuestions">
+        <input list = "questionList" type = "text" id = "search_question" name = "question" placeholder = "Search..." onclick = 'populateQuestionsInList()' oninput='putAnswerOnScreenIfClicked()'>
+            <datalist id="questionList"> 
+            </datalist>
+        <nav id = "Q_and_A">
+          <div>
             <p>Your Questions:</p>
-            <!-- <input list = "questionList" type = "text" id = "search_question" name = "question" placeholder = "Search..." onclick = 'populateQuestionsInList()' oninput='putAnswerOnScreenIfClicked()'>
-                <datalist id="questionList"> 
-                </datalist> -->
-            <nav id = "Q_and_A">
-              <ul id="question_time">
-                  <li class="one_question"><button id = "button_0" class = "question_button" onClick = "show_answer(this.id)">What is water?</button></li>
-                  <li class="one_question"><button id = "button_1" class = "question_button" onClick = "show_answer(this.id)">What are the first 5 elements of the periodic table?</button></li>
-                  <li class="one_question"><button id = "button_2" class = "question_button" onClick = "show_answer(this.id)">What does specific heat mean?</button></li>
-              </ul>
-            </nav>
-            <!-- <input type="button" onclick = goBackToFirstScreen(this) id="addQuestionButton" value="+">  -->
           </div>
-      
-          <div id="yourQuestions">
-            <p id="yourQuestionOrAnswerParagraph">Your Question:</p>
-            <p id="answer">Ask any question related to your class! Please be polite and respectful.</p>
-            <input type="text" id="input_question" name="ask_a_question" placeholder = "Type Question...">
-            <button id = "ask_your_question_button" onclick = "get_input()" disabled = true>Ask</button>
-            <!-- <input type="text" id="input_answer" name="answer_a_question" placeholder = "Answer Question...">
-            <button id = "reply_to_question_button" onclick = "get_input()" disabled = true>Respond</button> -->
-          </div>
-        </div> <!-- class="row" -->
-      </div> <!-- class="container" -->
+          
+          <ul id="question_time">
+              <li class="one_question"><button id = "button_0" class = "question_button" onClick = "show_answer(this.id)">What is water?</button></li>
+              <li class="one_question"><button id = "button_1" class = "question_button" onClick = "show_answer(this.id)">What are the first 5 elements of the periodic table?</button></li>
+              <li class="one_question"><button id = "button_2" class = "question_button" onClick = "show_answer(this.id)">What does specific heat mean?</button></li>
+          </ul>
+        </nav>
+        <!-- <input type="button" onclick = goBackToFirstScreen(this) id="addQuestionButton" value="+">  -->
+        <p id="yourQuestionOrAnswerParagraph">Your Question:</p>
+        <p id="answer">Ask any question related to your class! Please be polite and respectful.</p>
+        <input type="text" id="input_question" name="ask_a_question" placeholder = "Type Question...">
+        <button id = "ask_your_question_button" onclick = "get_input()" disabled = true>Ask</button>
+      </div>
+  
+      <div id="yourQuestions">
+        <!-- <p id="yourQuestionOrAnswerParagraph">Your Question:</p>
+        <p id="answer">Ask any question related to your class! Please be polite and respectful.</p>
+        <input type="text" id="input_question" name="ask_a_question" placeholder = "Type Question...">
+        <button id = "ask_your_question_button" onclick = "get_input()" disabled = true>Ask</button> -->
+        <!-- <input type="text" id="input_answer" name="answer_a_question" placeholder = "Answer Question...">
+        <button id = "reply_to_question_button" onclick = "get_input()" disabled = true>Respond</button> -->
+      </div>
       
 
       <script type = "text/javascript">
