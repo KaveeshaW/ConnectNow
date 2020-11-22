@@ -1,42 +1,65 @@
-.container {
+.rContainer {
     height: auto;
     width: auto;
   }
   
-  #chemistryTitle {
-    font-size: 60px;
-    font-family: Calibri;
-    text-align: center;
-    margin-left: auto;
-    margin-right: auto;
-    margin-top: 50px;
-  }
-  #reminders {
-    font-size: 40px;
-    font-family: calibri;
-    position: relative;
-    margin-top: auto;
-    text-align: center;
-  }
-  .center {
-    height: 200px;
-    width: 100%;
-    margin-top: -50px;
-    background-color: rgb(142, 212, 163);
-  }
+#chemistryTitle {
+  font-size: 60px;
+  font-family: Calibri;
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 50px;
+}
+#reminders {
+  font-size: 40px;
+  font-family: calibri;
+  position: relative;
+  margin-top: auto;
+  text-align: center;
+}
+.rCenter {
+  height: 200px;
+  width: 100%;
+  margin-top: -50px;
+  background-color: rgb(142, 212, 163);
+}
 
-  #helpButton {
-    border: 1px solid black;
-    font-size: 25px;
-    border-radius: 50%;
-    width: 40px;
-    height: 40px;
-    position: fixed;
-    text-align: center;
-    margin-left: 95%;
-    margin-top: 50px;
-  }
-  #helpButton:hover {
-    background-color: rgb(212, 211, 211);
-    cursor: pointer;
-  }
+#helpButton {
+  border: 1px solid black;
+  font-size: 25px;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  position: fixed;
+  text-align: center;
+  margin-left: 95%;
+  margin-top: 50px;
+}
+#helpButton:hover {
+  background-color: rgb(212, 211, 211);
+  cursor: pointer;
+}
+
+.listContainer{
+  max-height: 400px;
+  overflow-y: scroll;
+}
+
+.reminderInput{
+  margin-left: 25%;
+  max-width: 500px;
+}
+
+.liClose{
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  right: 0%;
+  padding: 12px 20px;
+  transform: translate(0%, -50%);
+}
+
+.liClose:hover{
+  background: #bbb;
+}

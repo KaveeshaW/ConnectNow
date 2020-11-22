@@ -4,10 +4,50 @@
     <title>Reminders</title>
     <link rel="stylesheet" href="CSS/remindersLayout.css">
     <link rel="stylesheet" href="CSS/navbar.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+
+    <script>
+        $( document ).ready(function() {
+            updateX();
+        });
+
+        function updateX(){
+            var closebtns = document.getElementsByClassName("liClose");
+            var i;
+
+            for (i = 0; i < closebtns.length; i++) {
+                closebtns[i].addEventListener("click", function() {
+                 this.parentElement.style.display = 'none';
+                });
+            }
+        }
+        
+        $(document).on('click', '#addButton', function(){
+            var rDesc = document.getElementById('reminderDesc').value;
+            var rDate = document.getElementById('pickDate').value;
+            if((rDesc !== "") && (rDate !== "")){
+                rDate = rDate.replace(/-/g,"/");
+                rDate = new Date(rDate);
+                rDOW = rDate.toString().substring(0,3);
+                rDate = rDOW + " " + rDate.toLocaleDateString();
+                var $newReminder = $('<li class="list-group-item">'+ rDesc + ' ' + ' - ' + rDate + '<span class="liClose">X</span></li>');
+                $('#reminderList').append($newReminder);
+            }
+            else{
+                alert("Please enter Description and Date.");
+            }
+            document.getElementById('reminderDesc').value = "";
+            document.getElementById('pickDate').value = "";
+            updateX();
+        });
+
+        //$('.datepicker').datepicker();
+    </script>
 </head>
 <body>
-    <div class="container">
-        <div class = "center">
+    <div class="rContainer">
+        <div class = "rCenter">
             <input type="button" onclick="window.location.href='help.html'" id="helpButton" value="?">
             <p id="chemistryTitle">Chemistry</p>
             <p id="reminders">Reminders</p>
@@ -24,6 +64,33 @@
                 </ul>
             </nav>
         </div>
+    </div>
+    <div class="container">
+        <div class="listContainer">
+            <ul id="reminderList" class="list-group">
+                <li class="list-group-item">Reminders</li>
+                <li class="list-group-item">Assignment #4 - Mon 11/10/2020<span class="liClose">X</span></li>
+                <li class="list-group-item">Exam #2 - Fri 11/13/2020<span class="liClose">X</span></li>
+            </ul>
+        </div>
+        
+        <div class="reminderInput">
+            <form>
+                <div class="form-group">
+                  <label for="reminderDesc">Reminder Description</label>
+                  <input type="text" class="form-control" id="reminderDesc" placeholder="Description">
+                </div>
+                <div class="form-group">
+                    <div class="md-form md-outline input-with-post-icon datepicker">
+                        <label for="pickDate">Select a date:</label>
+                        <input type="date" class="form-control" id="pickDate" placeholder="Select date" maxlength="100">
+                    </div>
+                </div>
+                
+              </form>
+              <button id="addButton" class="btn btn-primary">Add Reminder</button>
+        </div>
+        
     </div>
 </body>
 </html>
