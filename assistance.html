@@ -1,11 +1,67 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Assistance</title>
-    <link rel="stylesheet" href="CSS/navbar.css">
+    <title>Chemistry: Assitance</title>
+    <link rel="stylesheet" href="CSS/coursesLayout.css">
+    <link rel="stylesheet" href="CSS/navbarLayout.css">
+    <link rel="stylesheet" href="CSS/assistanceLayout.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.css">
+
+
+    <style>
+	 
+	  .text-center{
+	  	width: auto;
+	  	height: auto;
+	    display:flex;
+	    padding:10px;
+	  	justify-content: center;
+	  	align-items: center;
+	  }
+
+
+	</style>
 </head>
 <body>
-    <h1>Assistance</h1>
-    <a href = "chemistryHomepage.html" class="round-button" id="backToChemistryHomepage">Back to chemistry</a>
+    <!-- <h1 class = "chem-subPage"><b>Chemistry: Assistance</b></h1> -->
+    <!-- Got this from https://www.w3.org/wiki/Creating_multiple_pages_with_navigation_menus -->
+    <div class="rContainer">
+        <div class = "rCenter">
+            <input type="button" onclick="window.location.href='help.html'" id="helpButton" value="?">
+            <p id="chemistryTitle">Chemistry</p>
+            <p id="assistanceLabel">Assistance</p>
+        </div>
+        <div class="header">
+            <nav>
+                <ul>
+                  <li><a href="courses.html">Courses</a></li>
+                  <li><a href="calendar.html">Calendar</a></li>
+                  <li><a href="reminders.html">Reminders</a></li>
+                  <li><a href="messages.html">Messages</a></li>
+                  <li><a class = "active" href="assistance.html">Assistance</a></li>
+                  <li><a href="settings.html">Settings</a></li>
+                </ul>
+            </nav>
+        </div>
+    </div>
+	<div class="containerCenter">
+	    <div class="border border-light p-3 mb-4">
+		    <div class="text-center">
+		        <input type="button" onclick="window.location.href='Q&A.html'" id="go_to_Q_and_A" value="Q&A"> 
+	        </div>
+		   
+		    <div class="text-center">
+		        <input type="button" onclick="window.location.href='messages.html'" id="go_to_WholeClass" value="Whole Class"> 
+		    </div>
+		   
+			<div class="text-center">
+		        <input type="button" onclick="window.location.href='chemistryOH.html'" id="go_to_OH" value="Office Hours"> 
+		    </div>  
+		</div>
+	</div>
+	
+
+
+   
 </body>
 </html>

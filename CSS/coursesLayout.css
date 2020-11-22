@@ -25,7 +25,8 @@
   margin-top: 20px;
 }
 #helpButton {
-  border: 1px solid black;
+  border: 2px solid black;
+  background-color: white;
   font-size: 25px;
   border-radius: 50%;
   width: 40px;
@@ -33,7 +34,9 @@
   position: fixed;
   text-align: center;
   margin-left: 95%;
-
+}
+#helpButton:hover {
+  background-color: rgb(212, 211, 211);
 }
 .courseButtons {
   position: relative;
@@ -45,11 +48,15 @@
 
 #goToChemistry {
   background-color: rgb(142, 212, 163);
-  border-radius: 12px;
   border: rgb(142, 212, 163);
+  border-radius: 12px;
   width: 400px;
   height: 400px;
   font-size: 40px;
+}
+#goToChemistry:hover {
+  background-color: rgb(125, 194, 146);
+  border: rgb(125, 194, 146);
 }
 #goToHistory {
   background-color: rgb(205, 178, 240);
@@ -71,11 +78,103 @@
 }
 #goToReminders {
   background-color: red;
-  border: red;
+  border: 4px solid rgb(209, 0, 0);
   border-radius: 50%;
   height: 60px;
   width: 60px;
   position: relative;
-  top: -190px;
+  top: -180px;
   right: 35px;
 }
+
+/* Got the styling for the navbar from https://www.w3schools.com/Css/css_navbar_horizontal.asp */
+
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: rgb(142, 212, 163);
+    padding-left: 33%;
+  }
+  
+  li {
+    float: left;
+  }
+  
+  li a {
+    display: block;
+    color: black;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+  }
+  
+  /* Change the link color to #111 (black) on hover */
+  li a:hover {
+    background-color: rgb(48, 247, 8);
+  }
+
+  .btn-info {
+      background-color: rgb(31, 172, 73) !important;
+      border-color: rgb(14, 156, 14) !important;
+  }
+
+  .chem-subPage {
+    text-align: center;
+  }
+
+  #go_to_Q_and_A {
+    background-color: rgb(240, 240, 240);
+    border-radius: 12px;
+    border: rgb(142, 212, 163);
+    width: 200px;
+    height: 200px;
+    font-size: 30px;
+    margin-top: 100px;
+    position: center;
+  }
+
+  #classQuestions {
+    padding-top: 130px;
+    align-content: center;
+    padding-left: 110px;
+    display:inline;
+    float:left;
+  } 
+  
+  #yourQuestions { 
+    padding-top: 5px;
+    align-items: center;
+    justify-content: center;
+    display:inline;
+    float: left;
+  }
+
+  #Q_and_A {
+    height:120px; 
+    width:35%;
+    overflow:hidden; 
+    overflow-y:scroll; 
+    display:inline;
+    float: left;
+  }
+
+  #question_time {
+    background-color: white;
+    align-items: center;
+  }
+
+  #a_question {
+    padding-bottom: 10px;
+    align-self: center;
+  }
+
+  #addQuestionButton {
+      border: 1px solid black;
+      font-size: 30px;
+      border-radius: 50%;
+      width: 45px;
+      height: 45px;
+      position: fixed;
+  }

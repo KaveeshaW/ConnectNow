@@ -11,33 +11,31 @@
 }
 
 #classQuestions {
-    padding-top: 130px;
+    font-size: 20px;
+    font-family: calibri;
     align-content: center;
-    padding-left: 110px;
-    display:inline;
-    float:left;
 } 
 
 #yourQuestions { 
+    font-size: 20px;
+    font-family: calibri;
     padding-top: 5px;
-    align-items: center;
-    justify-content: center;
-    display:inline;
-    float: left;
 }
 
 #Q_and_A {
-    height:120px; 
-    width:35%;
+    height:140px; 
+    width:20%;
     overflow:hidden; 
     overflow-y:scroll; 
-    display:inline;
-    float: left;
+    align-items: center;
 }
 
 #question_time {
     background-color: white;
-    align-items: center;
+}
+
+#search_question {
+    font-family: calibri;
 }
 
 .one_question {
@@ -51,6 +49,38 @@
     border-radius: 50%;
     width: 45px;
     height: 45px;
-    position: fixed;
 }
-   
+
+.question_button {
+    font-family: calibri;
+}
+
+#input_question {
+    width: 35%;
+    font-family: calibri;
+}
+
+#input_answer {
+    width: 35%;
+    font-family: calibri;
+    display: none;
+}
+
+#ask_your_question_button {
+    font-family: calibri;
+    background-color: rgb(142, 212, 163);
+    border: rgb(142, 212, 163);
+    width: 40px;
+    height: 23px;
+    font-size: 16px;
+}
+
+#reply_to_question_button {
+    font-family: calibri;
+    background-color: rgb(142, 212, 163);
+    border: rgb(142, 212, 163);
+    width: 67px;
+    height: 23px;
+    font-size: 16px;
+    display: none;
+}

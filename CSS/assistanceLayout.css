@@ -1,8 +1,55 @@
+
 .rContainer {
     height: auto;
     width: auto;
+    background-color: rgb(142, 212, 163);
+
   }
-  
+
+ #go_to_Q_and_A {
+    background-color: rgb(240, 240, 240);
+    border-radius: 12px;
+    border: rgb(142, 212, 163);
+    width: 300px;
+    height: 100px;
+    font-size: 30px;
+    margin-top: 100px;
+	
+  }
+  #go_to_Q_and_A:hover {
+  background-color: rgb(212, 211, 211);
+  }
+
+   #go_to_WholeClass {
+    background-color: rgb(240, 240, 240);
+    border-radius: 12px;
+    border: rgb(142, 212, 163);
+    width: 300px;
+    height: 100px;
+    font-size: 30px;
+    margin-top: 100px;
+    margin: auto;
+  }
+  #go_to_WholeClass:hover {
+  background-color: rgb(212, 211, 211);
+  }
+
+   #go_to_OH {
+    background-color: rgb(240, 240, 240);
+    border-radius: 12px;
+    border: rgb(142, 212, 163);
+    width: 300px;
+    height: 100px;
+    font-size: 30px;
+    margin-top: 100px;
+    margin: auto;
+    
+  }
+  #go_to_OH:hover {
+  background-color: rgb(212, 211, 211);
+  }
+
+
 #chemistryTitle {
   font-size: 60px;
   font-family: Calibri;
@@ -11,14 +58,14 @@
   margin-right: auto;
   padding-top: 50px;
 }
-#reminders {
+#assistanceLabel {
   font-size: 40px;
   font-family: calibri;
   position: relative;
   text-align: center;
   margin-top: -50px;
 }
-.rCenter {
+.center {
   height: 200px;
   width: 100%;
   margin-top: -60px;
@@ -36,10 +83,10 @@
   text-align: center;
   margin-left: 95%;
   margin-top: 50px;
-}
+} 
+
 #helpButton:hover {
   background-color: rgb(212, 211, 211);
-  cursor: pointer;
 }
 
 ul {
@@ -72,27 +119,4 @@ li a:hover {
 .btn-info {
     background-color: rgb(125, 194, 146) !important;
     border-color: rgb(125, 194, 146) !important;
-}
-
-.listContainer{
-  max-height: 400px;
-  overflow-y: scroll;
-}
-
-.reminderInput{
-  margin-left: 25%;
-  max-width: 500px;
-}
-
-.liClose{
-  cursor: pointer;
-  position: absolute;
-  top: 50%;
-  right: 0%;
-  padding: 12px 20px;
-  transform: translate(0%, -50%);
-}
-
-.liClose:hover{
-  background: #bbb;
 }
