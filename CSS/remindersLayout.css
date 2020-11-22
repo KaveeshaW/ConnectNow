@@ -1,6 +1,7 @@
 .rContainer {
     height: auto;
     width: auto;
+    background-color: rgb(142, 212, 163);
   }
   
 #chemistryTitle {
@@ -18,12 +19,12 @@
   text-align: center;
   margin-top: -50px;
 }
-.rCenter {
+/*.rCenter {
   height: 200px;
   width: 100%;
   margin-top: -60px;
   background-color: rgb(142, 212, 163);
-}
+}*/
 
 #helpButton {
   border: 1px solid black;
@@ -48,7 +49,7 @@ ul {
   padding: 0;
   overflow: hidden;
   background-color: rgb(142, 212, 163);
-  padding-left: 23%;
+  padding-left: 15%%;
 }
 
 li {

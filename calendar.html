@@ -1,11 +1,34 @@
 <!DOCTYPE html>
+
 <html>
 <head>
-    <title>Calendar</title>
+    <title>Chemistry: Calendar</title>
     <link rel="stylesheet" href="CSS/navbarLayout.css">
+    <link rel="stylesheet" href="CSS/calendarLayout.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.css">
+
+
 </head>
 <body>
-    <h1>Calendar</h1>
-    <a href = "chemistryHomepage.html" class="round-button" id="backToChemistryHomepage">Back to chemistry</a>
+    <!-- <h1 class = "chem-subPage"><b>Chemistry: Assistance</b></h1> -->
+    <!-- Got this from https://www.w3.org/wiki/Creating_multiple_pages_with_navigation_menus -->
+    <div class="cContainer">
+        <div class = "center">
+            <input type="button" onclick="window.location.href='help.html'" id="helpButton" value="?">
+            <p id="chemistryTitle">Chemistry</p>
+            <p id="calendarLabel">Calendar</p>
+        </div>
+        <div class="header">
+            <nav>
+                <ul>
+                  <li><a href="courses.html">Courses</a></li>
+                  <li><a class = "active" href="calendar.html">Calendar</a></li>
+                  <li><a href="reminders.html">Reminders</a></li>
+                  <li><a href="messages.html">Messages</a></li>
+                  <li><a href="assistance.html">Assistance</a></li>
+                  <li><a href="settings.html">Settings</a></li>
+                </ul>
+            </nav>
+        </div>
+    </div>
 </body>
-</html>

@@ -6,7 +6,7 @@ ul {
     padding: 0;
     overflow: hidden;
     background-color: rgb(142, 212, 163);
-    padding-left: 33%;
+    padding-left: 15%;
   }
   
   li {
@@ -17,13 +17,14 @@ ul {
     display: block;
     color: black;
     text-align: center;
-    padding: 14px 16px;
+    padding: 14px 50px;
     text-decoration: none;
+    font-family: Calibri;
   }
   
   /* Change the link color to #111 (black) on hover */
   li a:hover {
-    background-color: rgb(48, 247, 8);
+     background-color: rgb(125, 194, 146);
   }
   /*adding to keep highlight*/
   li a.active {
@@ -38,3 +39,4 @@ ul {
   .chem-subPage {
     text-align: center;
   }
+
