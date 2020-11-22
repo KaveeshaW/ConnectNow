@@ -10,7 +10,7 @@
     position: center;
 }
 
-#classQuestionsContainer{
+#classQuestionsContainer {
     font-size: 20px;
     font-family: calibri;
     align-content: center;
@@ -24,16 +24,14 @@
 }
 
 #Q_and_A {
-    height:190px; 
-    width:50%;
     overflow:hidden; 
     overflow-y:scroll; 
-    align-items: center;
     padding: 20px;
 }
 
 #question_time {
     background-color: white;
+    position: relative;
 }
 
 #search_question {
@@ -86,53 +84,6 @@
     font-size: 16px;
     display: none;
 }
-
-
-
-/*Header formatting*/
-.rContainer {
-    height: auto;
-    width: auto;
-    background-color: rgb(142, 212, 163);
-
- }
-
-  #chemistryTitle {
-  font-size: 60px;
-  font-family: Calibri;
-  text-align: center;
-  margin-left: auto;
-  margin-right: auto;
-  padding-top: 50px;
-  }
-
-  #qaLabel {
-  font-size: 40px;
-  font-family: calibri;
-  position: relative;
-  text-align: center;
-  margin-top: -50px;
-}
-
-#helpButton {
-  border: 1px solid black;
-  background-color: white;
-  font-size: 25px;
-  border-radius: 50%;
-  width: 40px;
-  height: 40px;
-  position: fixed;
-  text-align: center;
-  margin-left: 95%;
-  margin-top: 50px;
-} 
-
-#helpButton:hover {
-  background-color: rgb(212, 211, 211);
-  cursor: pointer;
-}
-
-
 
 #searchBarDiv {
     padding: 20px;
