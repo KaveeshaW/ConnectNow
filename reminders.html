@@ -33,13 +33,13 @@
                 rDate = rDOW + " " + rDate.toLocaleDateString();
                 var $newReminder = $('<li class="list-group-item">'+ rDesc + ' ' + ' - ' + rDate + '<span class="liClose">X</span></li>');
                 $('#reminderList').append($newReminder);
+                document.getElementById('reminderDesc').value = "";
+                document.getElementById('pickDate').value = "";
+                updateX();
             }
             else{
-                alert("Please enter Description and Date.");
+                alert("Please enter a Description and Date.");
             }
-            document.getElementById('reminderDesc').value = "";
-            document.getElementById('pickDate').value = "";
-            updateX();
         });
 
         //$('.datepicker').datepicker();
