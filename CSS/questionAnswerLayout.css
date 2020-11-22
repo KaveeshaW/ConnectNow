@@ -27,10 +27,15 @@
     width:20%;
     overflow:hidden; 
     overflow-y:scroll; 
+    align-items: center;
 }
 
 #question_time {
     background-color: white;
+}
+
+#search_question {
+    font-family: calibri;
 }
 
 .one_question {
@@ -47,8 +52,7 @@
 }
 
 .question_button {
-    align-self: center;
-    text-align: center;
+    font-family: calibri;
 }
 
 #input_question {
