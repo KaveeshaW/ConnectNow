@@ -16,6 +16,7 @@
 </head>
 <body>
   
+
   <div class="rContainer">
     <div class = "rCenter">
         <input type="button" onclick="window.location.href='help.html'" id="helpButton" value="?">
@@ -44,6 +45,37 @@
               <input list = "questionList" type = "text" id = "search_question" name = "question" placeholder = "Search..." onclick = 'populateQuestionsInList()' oninput='putAnswerOnScreenIfClicked()'>
               <input type="button" onclick = goBackToFirstScreen(this) id="goBackToNoQuestionsButton" value="+" disabled = true> 
             </div>
+
+    <div class="rContainer">
+      <div class = "rCenter">
+          <input type="button" onclick="window.location.href='help.html'" id="helpButton" value="?">
+          <p id="chemistryTitle">Chemistry</p>
+          <p id="reminders">Q&A</p>
+      </div>
+      <div class="header">
+          <nav>
+              <ul>
+                <li><a href="courses.html">Courses</a></li>
+                <li><a href="calendar.html">Calendar</a></li>
+                <li><a href="reminders.html">Reminders</a></li>
+                <li><a href="messages.html">Messages</a></li>
+                <li><a href="assistance.html">Assistance</a></li>
+                <li><a href="settings.html">Settings</a></li>
+              </ul>
+          </nav>
+      </div>
+    </div>  
+    <div id="classQuestionsContainer" style = "position: relative;">
+
+      <div style = "width: 25%; height: 100px; float: left;">
+        <nav id = "Q_and_A">
+          <p>Your Questions:</p>
+          <div id = "searchBarDiv">
+            <input list = "questionList" type = "text" id = "search_question" name = "question" placeholder = "Search..." onclick = 'populateQuestionsInList()' oninput='putAnswerOnScreenIfClicked()'>
+            <input type="button" onclick = goBackToFirstScreen(this) id="goBackToNoQuestionsButton" value="+" disabled = true> 
+          </div>
+          <div id = "searchAndGoBack">
+
             <div>
               <datalist id="questionList"> 
               </datalist>
@@ -55,6 +87,7 @@
               <li class="one_question"><button id = "button_2" class = "question_button" onClick = "show_answer(this.id)">What does specific heat mean?</button></li>
           </ul>
         </nav>
+
       </div>
       
 
@@ -66,6 +99,34 @@
         <input type="text" id="input_answer" name="answer_a_question" placeholder = "Answer Question...">
         <button id = "reply_to_question_button" onclick = "create_answer()" disabled = true>Respond</button>
       </div>
+
+      </div>
+
+      <div id="enterQuestionOrShowAnswer" style = "margin-left: 25%; height: 100px;">
+        <div>
+          <p id="yourQuestionOrAnswerParagraph">Your Question:</p>
+          <p id="answer">Ask any question related to your class! Please be polite and respectful.</p>
+        </div>
+      </div>
+
+    </div>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <div style = "padding-left: 500px;">
+      <input type="text" id="input_question" name="ask_a_question" placeholder = "Type Question...">
+      <button id = "ask_your_question_button" onclick = "create_question()" disabled = true>Ask</button>
+      <input type="text" id="input_answer" name="answer_a_question" placeholder = "Answer Question...">
+      <button id = "reply_to_question_button" onclick = "create_answer()" disabled = true>Respond</button>
+
     </div>
 
       <script type = "text/javascript">
