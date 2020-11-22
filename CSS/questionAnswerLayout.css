@@ -24,12 +24,12 @@
 }
 
 #Q_and_A {
-    overflow:hidden; 
-    overflow-y:scroll; 
     padding: 20px;
 }
 
 #question_time {
+    overflow:hidden; 
+    overflow-y:scroll; 
     background-color: white;
     position: relative;
 }
@@ -86,7 +86,7 @@
 }
 
 #searchBarDiv {
-    padding: 20px;
+    padding-bottom: 10px;
 }
 
 #searchAndGoBack {
