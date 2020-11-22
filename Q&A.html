@@ -50,7 +50,7 @@
               <li class="one_question"><button id = "button_2" class = "question_button" onClick = "show_answer(this.id)">What does specific heat mean?</button></li>
           </ul>
         </nav>
-        <!-- <input type="button" onclick = goBackToFirstScreen(this) id="addQuestionButton" value="+">  -->
+        <input type="button" onclick = goBackToFirstScreen(this) id="addQuestionButton" value="+" disabled = true> 
         <p id="yourQuestionOrAnswerParagraph">Your Question:</p>
         <p id="answer">Ask any question related to your class! Please be polite and respectful.</p>
         <input type="text" id="input_question" name="ask_a_question" placeholder = "Type Question...">
@@ -93,6 +93,8 @@
         
         function show_answer(id_of_button) {
           resetButtons();
+          document.querySelector("#addQuestionButton").disabled = false;
+
           let button_and_number = id_of_button.split("_"); 
           let whichQuestion = button_and_number[1]; 
 
@@ -112,7 +114,10 @@
         }
 
         function goBackToFirstScreen() {
-          alert("will be implemented eventually");
+          resetButtons();
+          document.querySelector("#addQuestionButton").disabled = true;
+          document.querySelector("#yourQuestionOrAnswerParagraph").innerHTML = "Your Question:";
+          document.querySelector("#answer").innerHTML = "Ask any question related to your class! Please be polite and respectful."; 
         }
 
         function populateQuestionsInList() {
