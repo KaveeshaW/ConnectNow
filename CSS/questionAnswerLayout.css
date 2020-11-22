@@ -60,6 +60,12 @@
     font-family: calibri;
 }
 
+#input_answer {
+    width: 35%;
+    font-family: calibri;
+    display: none;
+}
+
 #ask_your_question_button {
     font-family: calibri;
     background-color: rgb(142, 212, 163);
@@ -67,4 +73,14 @@
     width: 40px;
     height: 23px;
     font-size: 16px;
+}
+
+#reply_to_question_button {
+    font-family: calibri;
+    background-color: rgb(142, 212, 163);
+    border: rgb(142, 212, 163);
+    width: 67px;
+    height: 23px;
+    font-size: 16px;
+    display: none;
 }
