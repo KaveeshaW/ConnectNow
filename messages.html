@@ -1,6 +1,8 @@
 <!-- Used https://coder-coder.com/display-divs-side-by-side/ -->
 <!-- Used https://stackoverflow.com/questions/19338323/how-to-place-a-div-below-another-div -->
 <!-- Used this https://stackoverflow.com/questions/11365632/how-to-detect-when-the-user-presses-enter-in-an-input-field -->
+<!-- Used https://stackoverflow.com/questions/5517597/plain-count-up-timer-in-javascript -->
+<!-- Used https://stackoverflow.com/questions/33445207/how-to-stop-my-javascript-countdown-by-clicking-a-button -->
 <!DOCTYPE html>
 
 <html>
@@ -194,17 +196,21 @@
                 </ul>
                 <hr id = "lineBreak">
                 <input type="text" id="messageToSend" name="sendAMessage" placeholder = "Text...">
-                <p id = "mic">Mic</p>
-                <p id = "phone">Phone</p>
+                <!-- <p id = "mic">Mic</p>
+                <p id = "phone">Phone</p> -->
+                <input type="image" src="images\microphone.png"  onclick="mic()" width="50" height="50" id = "mic">
+                <input type="image" src="images\phone.png" onclick="phone()" width="50" height="50" id = "phone">
                 <p id = "upload">Upload</p> 
-        <!-- <div class = "sendMessageContainer">
-        </div> -->
+                <!-- <span id = "durt_text" style = "display: none">Call Duration: </span><span id="minutes" style = "display: none">00</span>:<span style = "display: none" id="seconds">00</span> -->
+                <span id="durt_text" style="display: none;"></span>
             </div>
         </div>
     </div>
 
     <script>
         let messageInput = document.querySelector("#messageToSend");
+        var myTimer;
+
         messageInput.addEventListener("keyup", (event) => {
             if (event.key === "Enter") {
                 let paragraph = document.createElement("p");
@@ -213,5 +219,66 @@
                 document.querySelector("#directMessageParagraph").appendChild(paragraph);
             }
         });
+
+        phone = () => {
+            var phoneImg = document.getElementById("phone");
+
+            var phoneOff = "images\\phone.png";
+            var phoneOn = "images\\Phone_On.png";
+
+            if (phoneImg.src.includes("On")){
+                phoneImg.src = phoneOff;
+                totalSeconds = 0;
+                clearInterval(myTimer);
+                // document.querySelector("#minutes").style.display = "none";
+                // document.querySelector("#seconds").style.display = "none";
+                document.querySelector("#durt_text").style.display = "none";
+                
+            }
+            else{
+                phoneImg.src = phoneOn;
+                myTimer = setInterval(setTime, 1000);
+                // document.querySelector("#minutes").style.display = "block";
+                // document.querySelector("#seconds").style.display = "block";
+                document.querySelector("#durt_text").style.display = "block";
+            }
+        }
+
+        mic = () => {
+            var micImg = document.getElementById("mic");
+
+            var micOff = "images\\microphone.png";
+            var micOn = "images\\Microphone_On.png";
+
+            if (micImg.src.includes("On")){
+                micImg.src = micOff;
+            }
+            else{
+                micImg.src = micOn;
+            }
+        }
+
+        // let minutesLabel = document.getElementById("minutes");
+        // let secondsLabel = document.getElementById("seconds");
+        let totalSeconds = 0;
+
+        function setTime() {
+            ++totalSeconds;
+            let seconds = pad(totalSeconds % 60);
+            let minutes = pad(parseInt(totalSeconds / 60));
+
+            // secondsLabel.innerHTML = pad(totalSeconds % 60);
+            // minutesLabel.innerHTML = pad(parseInt(totalSeconds / 60));
+            document.querySelector("#durt_text").innerHTML = "Call Duration: " + minutes.toString() + ":" + seconds.toString();
+        }
+
+        function pad(val) {
+            let valString = val + "";
+            if (valString.length < 2) {
+                return "0" + valString;
+            } else {
+                return valString;
+            }
+        }
     </script>
 </body>

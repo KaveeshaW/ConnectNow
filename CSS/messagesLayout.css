@@ -59,7 +59,7 @@
 }
 
 #messageList{
-  height: 120px;
+  height: 140px;
   overflow-y: scroll;
   background-color: #fff;
 }
@@ -111,27 +111,34 @@
 
 #lineBreak {
   position: relative;
-  top: 20px;
+  top: 45px;
   color: black;
   background-color: black;
   border-width: 1px;
-  width: 58.8%;
-  right: 222px;
+  width: 600px;
+  right: 188px;
 }
 
 #mic {
   position: relative;
-  left: 450px;
+  left: 10px;
+  top: 46px;
 }
 
 #phone {
   position: relative;
-  left: 500px;
-  bottom: 39px;
+  left: 25px;
+  top: 45px;
 }
 
 #upload {
   position: relative;
-  left: 570px;
-  bottom: 79px;
+  left: 540px;
+  bottom: 6px;
+}
+
+#durt_text {
+  position: relative;
+  left: 540px;
+  bottom: 6px;
 }
