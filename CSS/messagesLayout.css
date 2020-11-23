@@ -39,3 +39,29 @@
   cursor: pointer;
 }
 
+#messageList{
+  height: 400px;
+  overflow-y: scroll;
+  background-color: #fff;
+}
+
+.contactAndMessageContainer{
+  border: 3px solid #fff;
+  padding: 20px;
+}
+
+.listContainer {
+  width: 25%;
+  float: left;
+  padding: 20px;
+}
+
+.messageContainer {
+  width: 75%;
+  float: left;
+  padding: 20px;
+}
+
+#sendToLabel {
+  text-align:left;
+}
