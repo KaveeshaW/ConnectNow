@@ -41,6 +41,15 @@
 
 .search_in_contacts {
   padding-bottom: 10px;
+  font-family: calibri;
+}
+
+.list-group-item {
+  font-family: calibri;
+}
+
+#search_for_classmates {
+  font-family: calibri;
 }
 
 #messageList{
@@ -76,14 +85,20 @@
   top: 100px;
   left: 32px;
   width: 40%;
+  font-family: calibri;
 }
 
 #sendToLabel {
   text-align:left;
+  font-family: calibri;
 }
 
 #directMessageTextDiv {
   padding: 20px;
+}
+
+#directMessageParagraph {
+  font-family: calibri;
 }
 
 #lineBreak {

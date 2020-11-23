@@ -58,7 +58,8 @@
     //     } 
     // }
     function goBackToFirstScreen() {
-        //to implement
+        resetListItemColors();
+        document.querySelector("#directMessageParagraph").innerText = "Create a direct message with your classmates";
     }
 
     function findIndividualOrGroup() {
@@ -70,10 +71,10 @@
             if (contactNodes[whichNode].value == userInput) {
                 let indexInArray = whichNode - 1;
                 let contactName = contactNodes[whichNode].value != "Group 1" ? contactNodes[whichNode].value : "Group1";
+                changeParagraphToDirectMessages(contactName);
                 let contactID = "#" + contactName;
                 document.querySelector("#search_in_contacts").value = "";
                 document.querySelector(contactID).style.backgroundColor = colorWhenClicked;
-                //document.querySelector(".list-group-item").style.backgroundColor = '#d2d1d1';
             }
         }
     }
@@ -84,9 +85,15 @@
          }); 
     }
 
-    function changeColor(listItem) {
+    function changeColor(listItem, id) {
         resetListItemColors();
         listItem.style.backgroundColor = colorWhenClicked;
+        changeParagraphToDirectMessages(id);
+    }
+
+    function changeParagraphToDirectMessages(id) {
+        let contactName = document.querySelector("#" + id).innerText;
+        document.querySelector("#directMessageParagraph").innerText = contactName + "\'s Direct Messages";
     }
     // function searchForContacts() {
     //     let userInput = document.querySelector("#search_for_classmates").value;
@@ -138,11 +145,11 @@
                 </datalist>
             <input type="button" onclick="goBackToFirstScreen()" id="goBackToFirstScreen" value="+"> 
             <ul id="messageList" class="list-group">
-                <li class="list-group-item" id = "Adrian" onclick="changeColor(this)">Adrian</li>
-                <li class="list-group-item" id = "Cecilia" onclick="changeColor(this)">Cecilia</li>
-                <li class="list-group-item" id = "Kaveesha" onclick="changeColor(this)">Kaveesha</li>
-                <li class="list-group-item" id = "Sid" onclick="changeColor(this)">Sid</li>
-                <li class="list-group-item" id = "Group1" onclick="changeColor(this)">Group 1</li>
+                <li class="list-group-item" id = "Adrian" onclick="changeColor(this, this.id)">Adrian</li>
+                <li class="list-group-item" id = "Cecilia" onclick="changeColor(this, this.id)">Cecilia</li>
+                <li class="list-group-item" id = "Kaveesha" onclick="changeColor(this, this.id)">Kaveesha</li>
+                <li class="list-group-item" id = "Sid" onclick="changeColor(this, this.id)">Sid</li>
+                <li class="list-group-item" id = "Group1" onclick="changeColor(this, this.id)">Group 1</li>
             </ul>
         </div>
         <div class = "showMessageContainer">
@@ -153,7 +160,7 @@
                 </datalist>
             </p>
             <div id = "directMessageTextDiv">
-                <p>Create a direct message with your classmates</p>
+                <p id = "directMessageParagraph">Create a direct message with your classmates</p>
             </div>
         </div>
         <div class = "sendMessageContainer">
