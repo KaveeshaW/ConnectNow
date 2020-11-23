@@ -69,6 +69,10 @@
   margin-left: 50px;
   margin-right: 110px;
 }
+#goToHistory:hover {
+  background-color: rgb(188, 160, 223);
+  border: rgb(188, 160, 223);
+}
 #goToEnglish {
   background-color: rgb(240, 228, 178);
   border-radius: 12px;
@@ -76,6 +80,10 @@
   width: 400px;
   height: 400px;
   font-size: 40px;
+}
+#goToEnglish:hover {
+  background-color: rgb(223, 210, 161);
+  border: rgb(205, 178, 240);
 }
 #goToReminders {
   background-color: red;

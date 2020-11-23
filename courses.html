@@ -16,13 +16,15 @@
         <div class="courseButtons">
             <input type="button" onclick="window.location.href='Assistance.html'" id="goToChemistry" value="Chemistry"> 
             <input type="button" onclick="window.location.href='reminders.html'" id="goToReminders">
-            <input type="button" id="goToHistory" value="History">
-            <input type="button" id="goToEnglish" value="English">   
+            <input type="button" onclick=notifyUser(this.value) id="goToHistory" value="History">
+            <input type="button" onclick=notifyUser(this.value) id="goToEnglish" value="English">   
         </div>       
         
     </div>
 <script>
-
+    function notifyUser(course) {
+        alert(course + " will have the same functionality as Chemistry if implemented, so we did not implement " + course + " due to time constraint.");
+    }
 </script>
 </body>
 </html>
