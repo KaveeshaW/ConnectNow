@@ -1,5 +1,6 @@
 <!-- Used https://coder-coder.com/display-divs-side-by-side/ -->
 <!-- Used https://stackoverflow.com/questions/19338323/how-to-place-a-div-below-another-div -->
+<!-- Used this https://stackoverflow.com/questions/11365632/how-to-detect-when-the-user-presses-enter-in-an-input-field -->
 <!DOCTYPE html>
 
 <html>
@@ -144,7 +145,7 @@
                 <datalist id="searchContactsList"> 
                 </datalist>
             <input type="button" onclick="goBackToFirstScreen()" id="goBackToFirstScreen" value="+"> 
-            <ul id="messageList" class="list-group">
+            <ul id="contactList" class="list-group">
                 <li class="list-group-item" id = "Adrian" onclick="changeColor(this, this.id)">Adrian</li>
                 <li class="list-group-item" id = "Cecilia" onclick="changeColor(this, this.id)">Cecilia</li>
                 <li class="list-group-item" id = "Kaveesha" onclick="changeColor(this, this.id)">Kaveesha</li>
@@ -160,15 +161,28 @@
                 </datalist>
             </p>
             <div id = "directMessageTextDiv">
-                <p id = "directMessageParagraph">Create a direct message with your classmates</p>
+                <ul id="messageList" class="list-group">
+                    <li id = "directMessageParagraph">Create a direct message with your classmates</li>
+                </ul>
+                <hr id = "lineBreak">
+                <input type="text" id="messageToSend" name="sendAMessage" placeholder = "Text...">
+                <p id = "mic">Mic</p>
+                <p id = "phone">Phone</p>
+                <p id = "upload">Upload</p> 
+        <!-- <div class = "sendMessageContainer">
+        </div> -->
             </div>
         </div>
-        <div class = "sendMessageContainer">
-            <hr id = "lineBreak">
-            <!-- <input type="text" id="messageText" name="sendAMessage" placeholder = "Text...">
-            <p id = "mic">Mic</p>
-            <p id = "phone">Phone</p>
-            <p id = "upload">Upload</p> -->
-        </div>
     </div>
+    <script>
+        let messageInput = document.querySelector("#messageToSend");
+        messageInput.addEventListener("keyup", (event) => {
+            if (event.key === "Enter") {
+                let paragraph = document.createElement("p");
+                paragraph.innerHTML = "You: " + messageInput.value;
+                document.querySelector("#messageToSend").value = "";
+                document.querySelector("#directMessageParagraph").appendChild(paragraph);
+            }
+        });
+    </script>
 </body>
