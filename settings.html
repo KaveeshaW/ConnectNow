@@ -6,15 +6,36 @@
     <link rel="stylesheet" href="CSS/navbarLayout.css">
     <link rel="stylesheet" href="CSS/settingsLayout.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.css">
-
-
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
 </head>
+<script>
+    $(document).ready(function() {
+        readyModal();
+    });
+
+    function readyModal(){
+        $(document).on('click', '#helpButton', function(){
+            document.getElementById("helpModal").style.display = "block";
+        });
+
+        $(document).on('click', '.modalClose', function(){
+            document.getElementById("helpModal").style.display = "none";
+        });
+
+        window.onclick = function(event) {
+            var modal = document.getElementById("helpModal");
+            if (event.target == modal) {
+                modal.style.display = "none";
+            }
+        }
+    }
+</script>
 <body>
     <!-- <h1 class = "chem-subPage"><b>Chemistry: Assistance</b></h1> -->
     <!-- Got this from https://www.w3.org/wiki/Creating_multiple_pages_with_navigation_menus -->
     <div class="cContainer">
         <div class = "center">
-            <input type="button" onclick="window.location.href='help.html'" id="helpButton" value="?">
+            <input type="button" id="helpButton" value="?">
             <p id="chemistryTitle">Chemistry</p>
             <p id="settingsLabel">Settings</p>
         </div>
@@ -29,6 +50,14 @@
                   <li><a class = "active" href="settings.html">Settings</a></li>
                 </ul>
             </nav>
+        </div>
+    </div>
+    <!-- Modal content that should be placed in every html file with a help button -->
+    <div id="helpModal" class="modal">
+        <!-- Modal content -->
+        <div class="modal-content">
+          <h1 style="text-align: center;">Need Help?<span class="modalClose">X</span></h1>
+          <img src="images/helpinstructions.png"/>
         </div>
     </div>
 </body>
