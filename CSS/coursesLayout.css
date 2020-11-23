@@ -96,6 +96,11 @@
   right: 35px;
 }
 
+#goToReminders:hover {
+  background-color: rgb(238, 0, 0);
+  border: 4px solid rgb(192, 0, 0);
+}
+
 /* Got the styling for the navbar from https://www.w3schools.com/Css/css_navbar_horizontal.asp */
 
 ul {
