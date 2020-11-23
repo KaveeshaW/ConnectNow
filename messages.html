@@ -12,11 +12,12 @@
 </head>
 <script>
     let classmates = ['Adrian', 'Cecilia', 'Kaveesha', 'Sid', 'Group 1'];
+    let colorWhenClicked = '#d2d1d1'; 
 
     $(document).ready(function() {
         readyModal();
-        populateClassmateList();
-        populateContactList();
+        populateList(document.querySelector("#searchClassmatesList"));
+        populateList(document.querySelector("#searchContactsList"));
     });
 
     function readyModal(){
@@ -35,20 +36,7 @@
             }
         }
     }
-    function populateClassmateList() {
-        let classmateList = document.querySelector("#searchClassmatesList");
-        //for the option menu showing all of the different questions 
-        for(let i = 0; i < classmates.length; i++) {
-            let classmate = classmates[i];
-            let classmateOption = document.createElement("option");
-            classmateOption.textContent = classmate;
-            classmateOption.value = classmate;
-            classmateList.appendChild(classmateOption);
-            //searchContacts.appendChild(classmateOption);
-        } 
-    }
-    function populateContactList() {
-        let contactList = document.querySelector("#searchContactsList");
+    function populateList(contactList) {
         //for the option menu showing all of the different questions 
         for(let i = 0; i < classmates.length; i++) {
             let classmate = classmates[i];
@@ -56,8 +44,61 @@
             classmateOption.textContent = classmate;
             classmateOption.value = classmate;
             contactList.appendChild(classmateOption);
+            //searchContacts.appendChild(classmateOption);
         } 
     }
+    // function populateContactList(contactList) {
+    //     //for the option menu showing all of the different questions 
+    //     for(let i = 0; i < classmates.length; i++) {
+    //         let classmate = classmates[i];
+    //         let classmateOption = document.createElement("option");
+    //         classmateOption.textContent = classmate;
+    //         classmateOption.value = classmate;
+    //         contactList.appendChild(classmateOption);
+    //     } 
+    // }
+    function goBackToFirstScreen() {
+        //to implement
+    }
+
+    function findIndividualOrGroup() {
+        resetListItemColors();
+        let userInput = document.querySelector("#search_in_contacts").value;
+        let contactNodes = document.querySelector('#searchContactsList').childNodes;
+        //node indexing starts at one for some reason, the index in the array starts at 0
+        for (let whichNode = 1; whichNode < classmates.length + 1; whichNode++) {
+            if (contactNodes[whichNode].value == userInput) {
+                let indexInArray = whichNode - 1;
+                let contactName = contactNodes[whichNode].value != "Group 1" ? contactNodes[whichNode].value : "Group1";
+                let contactID = "#" + contactName;
+                document.querySelector("#search_in_contacts").value = "";
+                document.querySelector(contactID).style.backgroundColor = colorWhenClicked;
+                //document.querySelector(".list-group-item").style.backgroundColor = '#d2d1d1';
+            }
+        }
+    }
+
+    function resetListItemColors() {
+        document.querySelectorAll("li.list-group-item").forEach(contact => {
+            contact.style.backgroundColor = "#fff";
+         }); 
+    }
+
+    function changeColor(listItem) {
+        resetListItemColors();
+        listItem.style.backgroundColor = colorWhenClicked;
+    }
+    // function searchForContacts() {
+    //     let userInput = document.querySelector("#search_for_classmates").value;
+    //     let contactNodes = document.querySelector('#searchClassmatesList').childNodes;
+    //     //node indexing starts at one for some reason, the index in the array starts at 0
+    //     for (let whichNode = 1; whichNode < classmates.length + 1; whichNode++) {
+    //         if (contactNodes[whichNode].value == userInput) {
+    //             let indexInArray = whichNode - 1;
+    //             document.querySelector("#search_for_classmates").value = "";
+    //         }
+    //     }
+    // }
 </script>
 <body>
     <!-- <h1 class = "chem-subPage"><b>Chemistry: Assistance</b></h1> -->
@@ -97,17 +138,17 @@
                 </datalist>
             <input type="button" onclick="goBackToFirstScreen()" id="goBackToFirstScreen" value="+"> 
             <ul id="messageList" class="list-group">
-                <li class="list-group-item">Adrian</li>
-                <li class="list-group-item">Cecilia</li>
-                <li class="list-group-item">Kaveesha</li>
-                <li class="list-group-item">Sid</li>
-                <li class="list-group-item">Group 1</li>
+                <li class="list-group-item" id = "Adrian" onclick="changeColor(this)">Adrian</li>
+                <li class="list-group-item" id = "Cecilia" onclick="changeColor(this)">Cecilia</li>
+                <li class="list-group-item" id = "Kaveesha" onclick="changeColor(this)">Kaveesha</li>
+                <li class="list-group-item" id = "Sid" onclick="changeColor(this)">Sid</li>
+                <li class="list-group-item" id = "Group1" onclick="changeColor(this)">Group 1</li>
             </ul>
         </div>
         <div class = "showMessageContainer">
             <p id="sendToLabel">
                 To:
-                <input list = "searchClassmatesList" type = "text" id = "search_for_classmates" name = "searchClassmates" placeholder = "Search Classmates..." oninput='findPersonToSendTo()'>
+                <input list = "searchClassmatesList" type = "text" id = "search_for_classmates" name = "searchClassmates" placeholder = "Search Classmates..."> <!--oninput='searchForContacts()' -->
                 <datalist id="searchClassmatesList"> 
                 </datalist>
             </p>
@@ -123,9 +164,4 @@
             <p id = "upload">Upload</p> -->
         </div>
     </div>
-    <script>
-        function goBackToFirstScreen() {
-        //to implement
-        }
-    </script>
 </body>
