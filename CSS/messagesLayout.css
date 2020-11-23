@@ -52,8 +52,14 @@
   font-family: calibri;
 }
 
-#messageList{
+#contactList{
   height: 195px;
+  overflow-y: scroll;
+  background-color: #fff;
+}
+
+#messageList{
+  height: 120px;
   overflow-y: scroll;
   background-color: #fff;
 }
@@ -80,12 +86,13 @@
   position: relative;
 }
 
-#messageText {
+#messageToSend {
   position: relative;
-  top: 100px;
-  left: 32px;
+  top: 30px;
+  right: 4px;
   width: 40%;
   font-family: calibri;
+  text-align: center;
 }
 
 #sendToLabel {
@@ -99,32 +106,32 @@
 
 #directMessageParagraph {
   font-family: calibri;
+  text-align: left;
 }
 
 #lineBreak {
   position: relative;
-  top: 238px;
+  top: 20px;
   color: black;
   background-color: black;
   border-width: 1px;
-  width: 50%;
-  left: 33px;
+  width: 58.8%;
+  right: 222px;
 }
 
 #mic {
   position: relative;
-  top: 72px;
-  left: 675px;
+  left: 450px;
 }
 
 #phone {
   position: relative;
-  top: 33px;
-  left: 720px;
+  left: 500px;
+  bottom: 39px;
 }
 
 #upload {
   position: relative;
-  bottom: 8px;
-  left: 1170px;
+  left: 570px;
+  bottom: 79px;
 }
