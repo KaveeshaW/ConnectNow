@@ -11,16 +11,16 @@
     $(document).ready(function() {
         readyModal();
 
-        var containers = document.getElementsByClassName("container");
+        var containers = document.getElementsByClassName("time-right");
 
         for (var i = 0; i < containers.length; i++){
-            containers[i].lastChild.innerHTML = getDate();
+            containers[i].innerHTML = getDate();
         }
 
-        var containers = document.getElementsByClassName("container darker");
+        var containers = document.getElementsByClassName("time-left");
 
         for (var i = 0; i < containers.length; i++){
-            containers[i].lastChild.innerHTML = getDate();
+            containers[i].innerHTML = getDate();
         }
     });
 
