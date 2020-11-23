@@ -39,8 +39,12 @@
   cursor: pointer;
 }
 
+.search_in_contacts {
+  padding-bottom: 10px;
+}
+
 #messageList{
-  height: 400px;
+  height: 195px;
   overflow-y: scroll;
   background-color: #fff;
 }
@@ -56,12 +60,56 @@
   padding: 20px;
 }
 
-.messageContainer {
+.showMessageContainer {
   width: 75%;
   float: left;
   padding: 20px;
+  position: relative;
+}
+
+.sendMessageContainer {
+  position: relative;
+}
+
+#messageText {
+  position: relative;
+  top: 100px;
+  left: 32px;
+  width: 40%;
 }
 
 #sendToLabel {
   text-align:left;
+}
+
+#directMessageTextDiv {
+  padding: 20px;
+}
+
+#lineBreak {
+  position: relative;
+  top: 238px;
+  color: black;
+  background-color: black;
+  border-width: 1px;
+  width: 50%;
+  left: 33px;
+}
+
+#mic {
+  position: relative;
+  top: 72px;
+  left: 675px;
+}
+
+#phone {
+  position: relative;
+  top: 33px;
+  left: 720px;
+}
+
+#upload {
+  position: relative;
+  bottom: 8px;
+  left: 1170px;
 }
