@@ -6,11 +6,13 @@ ul {
     padding: 0;
     overflow: hidden;
     background-color: rgb(142, 212, 163);
-    padding-left: 15%;
+    position: relative;
+    text-align: center;
   }
   
+
   li {
-    float: left;
+    display: inline-block;
   }
   
   li a {
@@ -40,3 +42,5 @@ ul {
     text-align: center;
   }
 
+  
+}

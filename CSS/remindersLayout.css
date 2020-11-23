@@ -43,37 +43,6 @@
   cursor: pointer;
 }
 
-ul {
-  list-style-type: none;
-  margin: 0;
-  padding: 0;
-  overflow: hidden;
-  background-color: rgb(142, 212, 163);
-  padding-left: 15%;
-}
-
-li {
-  float: left;
-}
-
-li a {
-  display: block;
-  color: black;
-  text-align: center;
-  padding: 14px 50px;
-  text-decoration: none;
-  font-family: Calibri;
-}
-
-/* Change the link color to #111 (black) on hover */
-li a:hover {
-  background-color: rgb(125, 194, 146);
-}
-
-.btn-info {
-    background-color: rgb(125, 194, 146) !important;
-    border-color: rgb(125, 194, 146) !important;
-}
 
 .listContainer{
   max-height: 400px;
