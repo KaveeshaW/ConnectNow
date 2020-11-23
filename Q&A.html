@@ -11,29 +11,30 @@
 <head>
     <title>Chemistry: Home</title>
     <link rel="stylesheet" href="CSS/questionAnswerLayout.css">
-    <link rel="stylesheet" href="CSS/remindersLayout.css">
+    <link rel="stylesheet" href="CSS/navbarLayout.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.css">
 
 </head>
 <body>
-    <div class="rContainer">
-      <div class = "rCenter">
-          <input type="button" onclick="window.location.href='help.html'" id="helpButton" value="?">
-          <p id="chemistryTitle">Chemistry</p>
-          <p id="reminders">Q&A</p>
-      </div>
-      <div class="header">
-          <nav>
-              <ul>
-                <li><a href="courses.html">Courses</a></li>
-                <li><a href="calendar.html">Calendar</a></li>
-                <li><a href="reminders.html">Reminders</a></li>
-                <li><a href="messages.html">Messages</a></li>
-                <li><a href="assistance.html">Assistance</a></li>
-                <li><a href="settings.html">Settings</a></li>
-              </ul>
-          </nav>
-      </div>
-    </div>  
+  <div class="rContainer">
+    <div class = "center">
+        <input type="button" onclick="window.location.href='help.html'" id="helpButton" value="?">
+        <p id="chemistryTitle">Chemistry</p>
+        <p id="qaLabel">Q&A</p>
+    </div>
+    <div class="header">
+        <nav>
+            <ul>
+              <li><a href="courses.html">Courses</a></li>
+              <li><a href="calendar.html">Calendar</a></li>
+              <li><a href="reminders.html">Reminders</a></li>
+              <li><a href="messages.html">Messages</a></li>
+              <li><a href="assistance.html">Assistance</a></li>
+              <li><a href="settings.html">Settings</a></li>
+            </ul>
+        </nav>
+    </div>
+  </div>  
     <div id="classQuestionsContainer" style = "position: relative;">
 
       <div style = "width: 25%; height: 100px; float: left;">
@@ -58,11 +59,10 @@
         </nav>
 
       </div>
-      
 
-      <div id="enterQuestionOrShowAnswer" style = "margin-left: 50%; height: 100px;">
-        <p id="yourQuestionOrAnswerParagraph">Your Question:</p>
-        <p id="answer">Ask any question related to your class! Please be polite and respectful.</p>
+      <div id="enterQuestionOrShowAnswer" style = "margin-left: 0%; height: 100px;">
+        <p id="yourQuestionOrAnswerParagraph" style = "text-align: center;">Your Question:</p>
+        <p id="answer" style = "text-align: center;">Ask any question related to your class! Please be polite and respectful.</p>
       </div>
 
       </div>
