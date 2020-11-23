@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+    <title>Chemistry: Whole Class</title>
+    <link rel="stylesheet" href="CSS/navbarLayout.css">
+    <link rel="stylesheet" href="CSS/wholeClassLayout.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+</head>
+<script>
+    let classmates = ['Adrian', 'Cecilia', 'Kaveesha', 'Sid', 'Latrell'];
+    
+
+    $(document).ready(function() {
+        readyModal();
+        populateBasdOnInput(document.querySelector("#searchContactsList"), classmates);
+        //populateBasdOnInput(document.querySelector("#searchClassmatesList"), classmates);
+    });
+
+    function readyModal(){
+        $(document).on('click', '#helpButton', function(){
+            document.getElementById("helpModal").style.display = "block";
+        });
+
+        $(document).on('click', '.modalClose', function(){
+            document.getElementById("helpModal").style.display = "none";
+        });
+
+        window.onclick = function(event) {
+            var modal = document.getElementById("helpModal");
+            if (event.target == modal) {
+                modal.style.display = "none";
+            }
+        }
+    }
+
+    populateBasdOnInput = (whichList, whichContacts) => {
+        //for the option menu showing all of the different questions 
+        for(let i = 0; i < whichContacts.length; i++) {
+            let classmate = whichContacts[i];
+            let classmateOption = document.createElement("option");
+            classmateOption.textContent = classmate;
+            classmateOption.value = classmate;
+            whichList.appendChild(classmateOption);
+            
+        } 
+    }
+
+
+    function resetListItemColors() {
+        document.querySelectorAll("li.list-group-item").forEach(contact => {
+            contact.style.backgroundColor = "#fff";
+         }); 
+    }
+
+  
+    function changeParagraphToDirectMessages(id) {
+        let contactName = document.querySelector("#" + id).innerText;
+        document.querySelector("#directMessageParagraph").innerText = contactName + "\'s Direct Messages";
+    }
+  
+</script>
+<body>
+    <!-- <h1 class = "chem-subPage"><b>Chemistry: Assistance</b></h1> -->
+    <!-- Got this from https://www.w3.org/wiki/Creating_multiple_pages_with_navigation_menus -->
+    <div class="cContainer">
+        <div class = "center">
+            <input type="button" id="helpButton" value="?">
+            <p id="chemistryTitle">Chemistry</p>
+            <p id="wcLabel">Whole Class</p>
+        </div>
+        <div class="header">
+            <nav>
+                <ul>
+                  <li><a href="courses.html">Courses</a></li>
+                  <li><a href="calendar.html">Calendar</a></li>
+                  <li><a href="reminders.html">Reminders</a></li>
+                  <li><a href="messages.html">Direct Messages</a></li>
+                  <li><a href="assistance.html">Assistance</a></li>
+                  <li><a href="settings.html">Settings</a></li>
+                </ul>
+            </nav>
+        </div>
+    </div>
+    <!-- Modal content that should be placed in every html file with a help button -->
+    <div id="helpModal" class="modal">
+        <!-- Modal content -->
+        <div class="modal-content">
+          <h1 style="text-align: center;">Need Help?<span class="modalClose">X</span></h1>
+          <img src="images/helpinstructions.png"/>
+        </div>
+    </div>   
+
+    <div class="contactAndMessageContainer"></div>
+        <div class="listContainer">
+        
+
+            <p id = "onlineLabel">Online Participants- 5</p>
+           
+            <ul id="contactList" class="list-group">
+                <li class="list-group-item" id = "Adrian" onclick="changeColor(this, this.id)">Adrian</li>
+                <li class="list-group-item" id = "Cecilia" onclick="changeColor(this, this.id)">Cecilia</li>
+                <li class="list-group-item" id = "Kaveesha" onclick="changeColor(this, this.id)">Kaveesha</li>
+                <li class="list-group-item" id = "Sid" onclick="changeColor(this, this.id)">Sid</li>
+                <li class="list-group-item" id = "Latrell" onclick="changeColor(this, this.id)">Latrell</li>
+            </ul>
+        </div>
+        <div class = "showMessageContainer">
+           
+            <div id = "directMessageTextDiv">
+                <ul id="messageList" class="list-group">
+                    <li id = "directMessageParagraph">Say hello to your classmates</li>
+                </ul>
+                <hr id = "lineBreak">
+                <input type="text" id="messageToSend" name="sendAMessage" placeholder = "Text...">
+                <p id = "mic">Mic</p>
+                <p id = "phone">Phone</p>
+                <p id = "upload">Upload</p> 
+      
+            </div>
+        </div>
+    </div>
+
+    <script>
+        let messageInput = document.querySelector("#messageToSend");
+        messageInput.addEventListener("keyup", (event) => {
+            if (event.key === "Enter") {
+                let paragraph = document.createElement("p");
+                paragraph.innerHTML = "You: " + messageInput.value;
+                document.querySelector("#messageToSend").value = "";
+                document.querySelector("#directMessageParagraph").appendChild(paragraph);
+            }
+        });
+    </script>
+</body>
