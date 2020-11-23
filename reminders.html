@@ -10,6 +10,7 @@
     <script>
         $( document ).ready(function() {
             updateX();
+            readyModal();
             // var date = new Date();
             // var dow = date.toString().substring(0,3);
             // date = dow + " " + date.toLocaleDateString();
@@ -24,6 +25,24 @@
                 closebtns[i].addEventListener("click", function() {
                  this.parentElement.style.display = 'none';
                 });
+            }
+        }
+
+        function readyModal(){
+            $(document).on('click', '#helpButton', function(){
+                document.getElementById("helpModal").style.display = "block";
+            });
+
+            $(document).on('click', '.modalClose', function(){
+                document.getElementById("helpModal").style.display = "none";
+            });
+
+            // When the user clicks anywhere outside of the modal, close it
+            window.onclick = function(event) {
+                var modal = document.getElementById("helpModal");
+                if (event.target == modal) {
+                    modal.style.display = "none";
+                }
             }
         }
         
@@ -45,14 +64,12 @@
                 alert("Please enter a Description and Date.");
             }
         });
-
-        //$('.datepicker').datepicker();
     </script>
 </head>
 <body>
     <div class="rContainer">
         <div class = "rCenter">
-            <input type="button" onclick="window.location.href='help.html'" id="helpButton" value="?">
+            <input type="button" id="helpButton" value="?">
             <p id="chemistryTitle">Chemistry</p>
             <p id="reminders">Reminders</p>
         </div>
@@ -92,7 +109,14 @@
               <button id="addButton" class="btn btn-primary">Add Reminder</button>
               
         </div>
-        
+    </div>
+    <!-- Modal content that should be placed in every html file with a help button -->
+    <div id="helpModal" class="modal">
+        <!-- Modal content -->
+        <div class="modal-content">
+          <h1 style="text-align: center;">Need Help?<span class="modalClose">X</span></h1>
+          <img src="images/helpinstructions.png"/>
+        </div>
     </div>
 </body>
 </html>
