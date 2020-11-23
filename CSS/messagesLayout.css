@@ -119,7 +119,7 @@
   right: 188px;
 }
 
-#mic {
+/* #mic {
   position: relative;
   left: 10px;
   top: 46px;
@@ -129,16 +129,20 @@
   position: relative;
   left: 25px;
   top: 45px;
-}
+} */
 
-#upload {
+/* #upload {
   position: relative;
   left: 540px;
   bottom: 6px;
-}
+} */
 
 #durt_text {
   position: relative;
   left: 540px;
   bottom: 6px;
+}
+
+#otherFeatures {
+ padding-left: 42%;
 }
