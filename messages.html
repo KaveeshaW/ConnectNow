@@ -15,7 +15,8 @@
 
     $(document).ready(function() {
         readyModal();
-        populateSearchLists();
+        populateClassmateList();
+        populateContactList();
     });
 
     function readyModal(){
@@ -34,9 +35,8 @@
             }
         }
     }
-    function populateSearchLists() {
+    function populateClassmateList() {
         let classmateList = document.querySelector("#searchClassmatesList");
-        //let searchContacts = document.querySelector("#searchContacts");
         //for the option menu showing all of the different questions 
         for(let i = 0; i < classmates.length; i++) {
             let classmate = classmates[i];
@@ -44,11 +44,19 @@
             classmateOption.textContent = classmate;
             classmateOption.value = classmate;
             classmateList.appendChild(classmateOption);
-            searchContacts.appendChild(classmateOption);
+            //searchContacts.appendChild(classmateOption);
         } 
     }
-    function goBackToFirstScreen() {
-        //to implement
+    function populateContactList() {
+        let contactList = document.querySelector("#searchContactsList");
+        //for the option menu showing all of the different questions 
+        for(let i = 0; i < classmates.length; i++) {
+            let classmate = classmates[i];
+            let classmateOption = document.createElement("option");
+            classmateOption.textContent = classmate;
+            classmateOption.value = classmate;
+            contactList.appendChild(classmateOption);
+        } 
     }
 </script>
 <body>
@@ -84,8 +92,8 @@
 
     <div class="contactAndMessageContainer"></div>
         <div class="listContainer">
-            <input list = "searchContacts" type = "text" id = "search_in_contacts" name = "searchContacts" placeholder = "Search..." oninput='findIndividualOrGroup()'>
-                <datalist id="searchContacts"> 
+            <input list = "searchContactsList" type = "text" id = "search_in_contacts" name = "searchContacts" placeholder = "Search..." oninput='findIndividualOrGroup()'>
+                <datalist id="searchContactsList"> 
                 </datalist>
             <input type="button" onclick="goBackToFirstScreen()" id="goBackToFirstScreen" value="+"> 
             <ul id="messageList" class="list-group">
@@ -109,10 +117,15 @@
         </div>
         <div class = "sendMessageContainer">
             <hr id = "lineBreak">
-            <input type="text" id="messageText" name="sendAMessage" placeholder = "Text...">
+            <!-- <input type="text" id="messageText" name="sendAMessage" placeholder = "Text...">
             <p id = "mic">Mic</p>
             <p id = "phone">Phone</p>
-            <p id = "upload">Upload</p>
+            <p id = "upload">Upload</p> -->
         </div>
     </div>
+    <script>
+        function goBackToFirstScreen() {
+        //to implement
+        }
+    </script>
 </body>
