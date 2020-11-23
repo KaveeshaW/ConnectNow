@@ -10,16 +10,34 @@
     <script>
         $( document ).ready(function() {
             updateX();
+            readyModal();
         });
 
         function updateX(){
             var closebtns = document.getElementsByClassName("liClose");
             var i;
-
+            
             for (i = 0; i < closebtns.length; i++) {
                 closebtns[i].addEventListener("click", function() {
                  this.parentElement.style.display = 'none';
                 });
+            }
+        }
+
+        function readyModal(){
+            $(document).on('click', '#helpButton', function(){
+                document.getElementById("helpModal").style.display = "block";
+            });
+
+            $(document).on('click', '.modalClose', function(){
+                document.getElementById("helpModal").style.display = "none";
+            });
+
+            window.onclick = function(event) {
+                var modal = document.getElementById("helpModal");
+                if (event.target == modal) {
+                    modal.style.display = "none";
+                }
             }
         }
         
@@ -41,14 +59,12 @@
                 alert("Please enter a Description and Date.");
             }
         });
-
-        //$('.datepicker').datepicker();
     </script>
 </head>
 <body>
     <div class="rContainer">
-        <div class = "center">
-            <input type="button" onclick="window.location.href='help.html'" id="helpButton" value="?">
+        <div class = "rCenter">
+            <input type="button" id="helpButton" value="?">
             <p id="chemistryTitle">Chemistry</p>
             <p id="reminders">Reminders</p>
         </div>
@@ -57,7 +73,7 @@
                 <ul>
                   <li><a href="courses.html">Courses</a></li>
                   <li><a href="calendar.html">Calendar</a></li>
-                  <li><a a class = "active" href="reminders.html">Reminders</a></li>
+                  <li><a href="reminders.html">Reminders</a></li>
                   <li><a href="messages.html">Messages</a></li>
                   <li><a href="assistance.html">Assistance</a></li>
                   <li><a href="settings.html">Settings</a></li>
@@ -68,14 +84,12 @@
     <div class="container">
         <div class="listContainer">
             <ul id="reminderList" class="list-group">
-                <li class="list-group-item">Reminders</li>
                 <li class="list-group-item">Assignment #4 - Mon 11/10/2020<span class="liClose">X</span></li>
                 <li class="list-group-item">Exam #2 - Fri 11/13/2020<span class="liClose">X</span></li>
             </ul>
         </div>
-        
         <div class="reminderInput">
-            <form>
+            <form id="reminderForm">
                 <div class="form-group">
                   <label for="reminderDesc">Reminder Description</label>
                   <input type="text" class="form-control" id="reminderDesc" placeholder="Description">
@@ -86,11 +100,18 @@
                         <input type="date" class="form-control" id="pickDate" placeholder="Select date" maxlength="100">
                     </div>
                 </div>
-                
               </form>
               <button id="addButton" class="btn btn-primary">Add Reminder</button>
+              
         </div>
-        
+    </div>
+    <!-- Modal content that should be placed in every html file with a help button -->
+    <div id="helpModal" class="modal">
+        <!-- Modal content -->
+        <div class="modal-content">
+          <h1 style="text-align: center;">Need Help?<span class="modalClose">X</span></h1>
+          <img src="images/helpinstructions.png"/>
+        </div>
     </div>
 </body>
 </html>

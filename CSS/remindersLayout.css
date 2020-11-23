@@ -45,13 +45,23 @@
 
 
 .listContainer{
-  max-height: 400px;
+  padding-top: 50px;
+}
+
+#reminderList{
+  height: 400px;
   overflow-y: scroll;
+  background-color: #fff;
 }
 
 .reminderInput{
-  margin-left: 25%;
-  max-width: 500px;
+  padding-top: 25px;
+  padding-left: 25%;
+  display: block;
+}
+
+#reminderForm{
+  width: 500px;
 }
 
 .liClose{
