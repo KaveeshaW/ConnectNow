@@ -110,33 +110,18 @@
 }
 
 #lineBreak {
-  position: relative;
-  top: 20px;
+   position: relative;
+  top: 45px;
   color: black;
   background-color: black;
   border-width: 1px;
-  width: 58.8%;
-  right: 222px;
-}
-
-#mic {
-  position: relative;
-  left: 450px;
-}
-
-#phone {
-  position: relative;
-  left: 500px;
-  bottom: 39px;
-}
-
-#upload {
-  position: relative;
-  left: 570px;
-  bottom: 79px;
+  width: 100%;
 }
 
 #onlineLabel{
   margin-left: 2%;
   font-weight: bold;
+}
+#otherFeatures {
+ padding-left: 42%;
 }

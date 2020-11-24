@@ -116,9 +116,16 @@
                 </ul>
                 <hr id = "lineBreak">
                 <input type="text" id="messageToSend" name="sendAMessage" placeholder = "Text...">
-                <p id = "mic">Mic</p>
+               <!--  <p id = "mic">Mic</p>
                 <p id = "phone">Phone</p>
-                <p id = "upload">Upload</p> 
+                <p id = "upload">Upload</p>  -->
+                <div id = "otherFeatures">
+                    <input type="image" src="images\microphone.png"  onclick="mic()" width="50" height="50" id = "mic">
+                    <input type="image" src="images\phone.png" onclick="phone()" width="50" height="50" id = "phone">
+                    <!-- <p id = "upload">Upload</p>  -->
+                    <!-- <label for="myfile">Select a file:</label> -->
+                    <input type="file" id="myfile" name="myfile">
+                </div>
       
             </div>
         </div>
@@ -134,5 +141,45 @@
                 document.querySelector("#directMessageParagraph").appendChild(paragraph);
             }
         });
+
+        phone = () => {
+            var phoneImg = document.getElementById("phone");
+
+            var phoneOff = "images\\phone.png";
+            var phoneOn = "images\\Phone_On.png";
+
+            if (phoneImg.src.includes("On")){
+                phoneImg.src = phoneOff;
+                totalSeconds = 0;
+                clearInterval(myTimer);
+                // document.querySelector("#minutes").style.display = "none";
+                // document.querySelector("#seconds").style.display = "none";
+                document.querySelector("#durt_text").style.display = "none";
+                
+            }
+            else{
+                phoneImg.src = phoneOn;
+                myTimer = setInterval(setTime, 1000);
+                // document.querySelector("#minutes").style.display = "block";
+                // document.querySelector("#seconds").style.display = "block";
+                document.querySelector("#durt_text").style.display = "block";
+            }
+        }
+
+        mic = () => {
+            var micImg = document.getElementById("mic");
+
+            var micOff = "images\\microphone.png";
+            var micOn = "images\\Microphone_On.png";
+
+            if (micImg.src.includes("On")){
+                micImg.src = micOff;
+            }
+            else{
+                micImg.src = micOn;
+            }
+        }
+
+
     </script>
 </body>
