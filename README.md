@@ -2,7 +2,7 @@
 This is a university project for CS422 at the Univerisity of Illinois at Chicago.
 
 Instructions:
-  Use link: https://kaveeshaw.github.io/CS422Project/
+  Use link: https://kaveeshaw.github.io/connectnow/
   OR
   Download all files included in this project "CS422Project"
   Open "courses.html" in a Google Chorme web broswer
